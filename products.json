@@ -1,0 +1,174 @@
+[
+  {
+    "id": 1,
+    "name": "DW持妆粉底液",
+    "brand": "雅诗兰黛",
+    "category": "粉底液",
+    "image": "/pics/1.jpeg",
+    "variants": [
+      {"name": "17#象牙色", "shade": "黄一白", "suitable": "适合肤色偏白"},
+      {"name": "36#深色", "shade": "黄二白", "suitable": "适合自然肤色"},
+      {"name": "62#自然色", "shade": "黄一白/黄二白", "suitable": "适合大多数肤色"}
+    ],
+    "price_taobao": 420,
+    "price_jd": 435,
+    "price_douyin": 399,
+    "coupon_info": "满400减30",
+    "avg_rating": 4.8,
+    "esg": {"score": 85}
+  },
+  {
+    "id": 2,
+    "name": "菁纯唇膏",
+    "brand": "兰蔻",
+    "category": "口红",
+    "image": "/pics/2.png",
+    "variants": [
+      {"name": "196#朱砂红", "shade": "正红色", "suitable": "适合所有肤色"},
+      {"name": "274#法式玫瑰", "shade": "粉玫瑰", "suitable": "适合白皮"}
+    ],
+    "price_taobao": 320,
+    "price_jd": 335,
+    "price_douyin": 298,
+    "coupon_info": "满299减20",
+    "avg_rating": 4.7,
+    "esg": {"score": 78}
+  },
+  {
+    "id": 3,
+    "name": "神仙水精华液",
+    "brand": "SK-II",
+    "category": "精华",
+    "image": "pics/3.jpg",
+    "variants": [
+      {"name": "经典版 230ml", "size": "230ml", "suitable": "适合大多数肤质"},
+      {"name": "新版 165ml", "size": "165ml", "suitable": "便携出差"}
+    ],
+    "price_taobao": 1590,
+    "price_jd": 1650,
+    "price_douyin": 1499,
+    "coupon_info": "满1500减100",
+    "avg_rating": 4.9,
+    "esg": {"score": 70}
+  },
+  {
+    "id": 4,
+    "name": "同心锁口红",
+    "brand": "花西子",
+    "category": "口红",
+    "image": "/pics/4.jpeg",
+    "variants": [
+      {"name": "M501朱砂红", "color": "朱砂红", "suitable": "适合复古妆容"},
+      {"name": "M502绛纱红", "color": "豆沙红", "suitable": "适合日常通勤"}
+    ],
+    "price_taobao": 219,
+    "price_jd": 229,
+    "price_douyin": 199,
+    "coupon_info": "满199减10",
+    "avg_rating": 4.6,
+    "esg": {"score": 82}
+  },
+  {
+    "id": 5,
+    "name": "双抗精华",
+    "brand": "珀莱雅",
+    "category": "精华",
+    "image": "/pics/5.png",
+    "variants": [
+      {"name": "30ml 标准装", "size": "30ml", "suitable": "适合早八人"},
+      {"name": "50ml 大容量", "size": "50ml", "suitable": "适合家用"}
+    ],
+    "price_taobao": 239,
+    "price_jd": 249,
+    "price_douyin": 219,
+    "coupon_info": "满200减20",
+    "avg_rating": 4.8,
+    "esg": {"score": 88}
+  },
+  {
+    "id": 6,
+    "name": "柔雾唇釉",
+    "brand": "NARS",
+    "category": "唇釉",
+    "image": "/pics/6.jpeg",
+    "variants": [
+      {"name": "柔雾红缪斯", "color": "正红色", "finish": "柔雾", "suitable": "适合所有肤色"},
+      {"name": "柔雾玫瑰", "color": "玫瑰粉", "finish": "柔雾", "suitable": "适合白皮"},
+      {"name": "柔雾焦糖", "color": "焦糖色", "finish": "柔雾", "suitable": "适合欧美妆"}
+    ],
+    "price_taobao": 280,
+    "price_jd": 290,
+    "price_douyin": 269,
+    "coupon_info": "满269减10",
+    "avg_rating": 4.7,
+    "esg": {"score": 72}
+  },
+  {
+    "id": 7,
+    "name": "紫熨斗眼霜",
+    "brand": "欧莱雅",
+    "category": "眼霜",
+    "image": "/pics/7.jpg",
+    "variants": [
+      {"name": "30ml", "size": "30ml", "suitable": "适合初抗老"},
+      {"name": "15ml*2", "size": "30ml", "suitable": "性价比之选"}
+    ],
+    "price_taobao": 279,
+    "price_jd": 289,
+    "price_douyin": 259,
+    "coupon_info": "满259减15",
+    "avg_rating": 4.7,
+    "esg": {"score": 75}
+  },
+  {
+    "id": 8,
+    "name": "九宫格眼影盘",
+    "brand": "3CE",
+    "category": "眼影",
+    "image": "/pics/8.jpeg",
+    "variants": [
+      {"name": "JOJO橘金", "palette": "橘棕", "suitable": "适合暖皮"},
+      {"name": "SMOOTHIE干玫瑰", "palette": "粉棕", "suitable": "适合冷皮"}
+    ],
+    "price_taobao": 230,
+    "price_jd": 239,
+    "price_douyin": 199,
+    "coupon_info": "满199减10",
+    "avg_rating": 4.8,
+    "esg": {"score": 68}
+  },
+  {
+    "id": 9,
+    "name": "小金瓶防晒",
+    "brand": "安热沙",
+    "category": "防晒",
+    "image": "/pics/9.jpg",
+    "variants": [
+      {"name": "经典款", "spf": "SPF50+", "suitable": "适合户外"},
+      {"name": "粉金瓶", "spf": "SPF50+", "suitable": "适合敏感肌"}
+    ],
+    "price_taobao": 248,
+    "price_jd": 258,
+    "price_douyin": 228,
+    "coupon_info": "满228减10",
+    "avg_rating": 4.7,
+    "esg": {"score": 65}
+  },
+  {
+    "id": 10,
+    "name": "动物眼影盘",
+    "brand": "完美日记",
+    "category": "眼影",
+    "image": "/pics/10.jpeg",
+    "variants": [
+      {"name": "小狗盘", "theme": "柯基", "suitable": "适合可爱风"},
+      {"name": "小猫盘", "theme": "英短", "suitable": "适合日常"}
+    ],
+    "price_taobao": 129,
+    "price_jd": 139,
+    "price_douyin": 119,
+    "coupon_info": "满119减5",
+    "avg_rating": 4.6,
+    "esg": {"score": 70}
+  }
+]
