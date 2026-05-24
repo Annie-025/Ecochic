@@ -150,6 +150,25 @@ body {
   box-shadow: var(--shadow-ai);
   border-color: var(--ai-teal);
 }
+.mobile-menu-toggle {
+  display: none;
+  width: 42px; height: 42px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--white);
+  align-items: center; justify-content: center;
+  flex-direction: column; gap: 5px;
+  cursor: pointer;
+}
+.mobile-menu-toggle span {
+  width: 18px; height: 2px;
+  border-radius: 10px;
+  background: var(--charcoal);
+  transition: transform 0.2s, opacity 0.2s;
+}
+.mobile-menu-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.mobile-menu-toggle.open span:nth-child(2) { opacity: 0; }
+.mobile-menu-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 .ai-dot-live {
   width: 7px; height: 7px;
   background: var(--ai-teal);
@@ -550,6 +569,42 @@ main { min-height: 100vh; }
 }
 
 /* ─────────────────────────────────────────── SORT BAR ──── */
+.list-search-panel {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+}
+.list-search-panel input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(56, 84, 102, 0.16);
+  border-radius: var(--r-pill);
+  background: var(--ivory);
+  font-size: 0.95rem;
+  color: var(--charcoal);
+}
+.list-search-panel input:focus {
+  outline: none;
+  border-color: var(--mint-dark);
+  box-shadow: 0 0 0 4px rgba(110,196,167,0.14);
+}
+.search-clear {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  background: var(--white);
+  color: var(--slate);
+  cursor: pointer;
+}
+.search-clear:hover {
+  border-color: var(--mint);
+  color: var(--mint-dark);
+}
 .sort-bar {
   display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;
   padding: 1rem 1.5rem; background: var(--white);
@@ -936,8 +991,39 @@ main { min-height: 100vh; }
   .hero-panel { display: none; }
   .features-grid { grid-template-columns: repeat(2,1fr); }
   .profile-grid { grid-template-columns: 1fr; }
-  .header { padding: 0 1.5rem; }
+  .header {
+    padding: 0 1rem;
+    height: auto;
+    min-height: 72px;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
   .logo-sub { display: none; }
+  .mobile-menu-toggle { display: flex; margin-left: auto; }
+  .header-nav {
+    order: 4;
+    width: 100%;
+    display: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+    padding: 0 0 1rem;
+  }
+  .header-nav.open { display: grid; }
+  .header-nav a {
+    text-align: center;
+    background: rgba(255,255,255,0.72);
+    border: 1px solid var(--border);
+    border-radius: var(--r-sm);
+    padding: 0.7rem 0.5rem;
+  }
+  .header-search {
+    order: 3;
+    flex-basis: 100%;
+    max-width: none;
+    margin: 0 0 0.85rem;
+  }
+  .header-search input { min-width: 0; }
+  .header-ai-badge { display: none; }
   .section { padding: 2.5rem 1.5rem; }
 }
 @media (max-width: 600px) {
@@ -946,6 +1032,39 @@ main { min-height: 100vh; }
   .ai-verdict-grid { grid-template-columns: 1fr; }
   .esg-grid { grid-template-columns: 1fr; }
   .features-grid { grid-template-columns: 1fr 1fr; }
+  .hero { padding: 3.5rem 1.25rem 3rem; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .hero-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .section { padding: 2rem 1rem; }
+  .sort-bar {
+    padding: 0.85rem;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    align-items: stretch;
+  }
+  .sort-label { display: none; }
+  .sort-btn, .filter-chip { flex: 0 0 auto; }
+  .filter-chips {
+    flex-wrap: nowrap;
+    margin-left: 0;
+  }
+  .list-search-panel {
+    position: sticky;
+    top: 72px;
+    z-index: 50;
+    box-shadow: var(--shadow-sm);
+  }
+  .products-grid { grid-template-columns: 1fr; }
+  .detail-hero, .section-card, .ai-module, .test-result-card, .profile-card {
+    border-radius: var(--r-lg);
+    padding: 1.25rem;
+  }
+  .modal-content {
+    width: calc(100% - 1.5rem);
+    max-height: calc(100vh - 2rem);
+    overflow: auto;
+    padding: 1.5rem;
+  }
 }
 
 /* ─────────────────────────────────────────── ANIMATIONS ──── */

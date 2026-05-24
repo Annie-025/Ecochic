@@ -102,6 +102,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function setSearchQuery(value) {
     searchQuery = value.toLowerCase().trim();
+    const headerInput = document.getElementById('product-search');
+    const listInput = document.getElementById('list-search');
+    if (headerInput && headerInput.value !== value) headerInput.value = value;
+    if (listInput && listInput.value !== value) listInput.value = value;
     renderList();
   }
 
@@ -143,6 +147,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('product-search');
   if (searchInput) {
     searchInput.addEventListener('input', (event) => setSearchQuery(event.target.value));
+    searchInput.addEventListener('focus', () => {
+      if (location.hash !== '#list') location.hash = '#list';
+    });
+  }
+
+  const nav = document.querySelector('.header-nav');
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  if (menuToggle && nav) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      menuToggle.classList.toggle('open', isOpen);
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    nav.addEventListener('click', (event) => {
+      if (event.target.closest('a')) {
+        nav.classList.remove('open');
+        menuToggle.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  const aiBadge = document.querySelector('.header-ai-badge');
+  if (aiBadge) aiBadge.addEventListener('click', () => showAIModal());
+
+  function escapeAttr(value) {
+    return String(value || '').replace(/"/g, '&quot;');
   }
 
   /* ══════════════════════════════════════════════════════
@@ -348,7 +379,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const brand = (p.brand || '').toLowerCase();
         const name = (p.name || '').toLowerCase();
         const ingredients = Array.isArray(p.ingredients) ? p.ingredients.join(' ').toLowerCase() : '';
-        return brand.includes(q) || name.includes(q) || ingredients.includes(q);
+        const comments = [p.comment_summary, ...(p.comment_positive || []), ...(p.comment_negative || []), ...(p.risk_ingredients || [])].join(' ').toLowerCase();
+        return brand.includes(q) || name.includes(q) || ingredients.includes(q) || comments.includes(q);
       });
     }
 
@@ -358,11 +390,12 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="section">
         <div class="section-label">✦ 全部产品</div>
         <div class="section-title">${sectionTitle}</div>
+        <p class="section-subtitle">搜索、筛选、排序合在同一处，适合路演时快速演示「从问题到决策」的完整链路。</p>
 
-        <div class="sort-bar mt-3">
-      <div class="section">
-        <div class="section-label">✦ 全部产品</div>
-        <div class="section-title">美妆产品库</div>
+        <div class="list-search-panel mt-3">
+          <input id="list-search" type="search" placeholder="搜索产品、品牌、成分、评论关键词" value="${escapeAttr(searchQuery)}">
+          ${searchQuery ? `<button class="search-clear" onclick="clearSearch()">清除</button>` : ''}
+        </div>
 
         <div class="sort-bar mt-3">
           <span class="sort-label">排序</span>
@@ -386,14 +419,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ${filtered.length > 0
           ? `<div class="products-grid">${filtered.map(p=>productCard(p)).join('')}</div>`
-          : `<div class="empty-state"><div class="empty-state-icon">🔍</div><p>暂无该分类产品</p></div>`
+          : `<div class="empty-state"><div class="empty-state-icon">🔍</div><p>没有找到匹配产品，试试品牌、功效或成分关键词</p></div>`
         }
       </div>
     `;
+
+    const listSearch = document.getElementById('list-search');
+    if (listSearch) {
+      listSearch.addEventListener('input', (event) => setSearchQuery(event.target.value));
+      listSearch.focus({ preventScroll: true });
+    }
   }
 
   window.setSort = (mode) => { sortMode = mode; renderList(); };
   window.setFilter = (f) => { activeFilter = f; renderList(); };
+  window.clearSearch = () => setSearchQuery('');
 
   /* ─── Product card helper ─── */
   function productCard(p) {
@@ -498,7 +538,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="ai-module-title">🤖 AI 评论智能总结</div>
               <div class="ai-module-subtitle">大模型实时分析 · 提炼核心口碑 · 演示模式</div>
             </div>
-            <span class="demo-badge" onclick="showAIModal()">
+            <span class="demo-badge" onclick="showProductAI(${p.id})">
               ⚡ 演示模式
             </span>
           </div>
@@ -846,36 +886,60 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ══════════════════════════════════════════════════════
      AI DEMO MODAL
   ══════════════════════════════════════════════════════ */
-  function showAIModal() {
+  async function showAIModal(product = null) {
     const modal = document.getElementById('ai-modal');
+    const body = document.getElementById('modal-body');
     document.getElementById('modal-title').innerHTML = `
       <span style="display:inline-flex;align-items:center;gap:0.5rem;">
         <span style="width:8px;height:8px;background:var(--ai-teal);border-radius:50%;animation:live-pulse 1.8s infinite;"></span>
-        AI 演示模式
+        AI 分析引擎
       </span>`;
-    document.getElementById('modal-body').innerHTML = `
+    body.innerHTML = `
       <p style="color:var(--slate);font-size:0.9rem;line-height:1.7;margin-bottom:1rem;">
-        当前为<strong>演示模式</strong>，展示 AI 功能的预设数据。
+        正在连接 AI 分析模块。如果没有本地 API key，会自动切换为 mock 演示模式。
       </p>
-      <div style="background:var(--ai-bg);border-radius:var(--r-md);padding:1rem;margin-bottom:1rem;">
-        <div style="font-size:0.72rem;color:rgba(255,255,255,0.4);font-family:var(--font-mono);letter-spacing:0.1em;margin-bottom:0.5rem;">// 实际部署调用示例</div>
-        <pre style="font-size:0.75rem;color:rgba(255,255,255,0.7);font-family:var(--font-mono);overflow-x:auto;line-height:1.6;">fetch("https://api.anthropic.com/v1/messages", {
-  model: "claude-sonnet-4-20250514",
-  messages: [{ role: "user",
-    content: "请总结以下产品评论..." }]
-})</pre>
-      </div>
-      <div style="font-size:0.82rem;color:var(--slate);">
-        📌 支持接入：文心一言、通义千问、DeepSeek V3、Claude API 等主流大模型
+      <div class="ai-thinking" style="background:var(--ai-bg);border-radius:var(--r-md);">
+        <span>EcoChic AI 正在生成摘要</span>
+        <span class="ai-thinking-dots"><span></span><span></span><span></span></span>
       </div>
     `;
     modal.classList.add('active');
     modal.querySelector('.modal-close').onclick = () => modal.classList.remove('active');
     modal.onclick = (e) => { if(e.target===modal) modal.classList.remove('active'); };
+
+    const target = product || products[0] || null;
+    const result = await window.EcoChicAI.analyze({
+      task: 'summarize_product_decision',
+      product: target,
+    });
+
+    body.innerHTML = `
+      <p style="color:var(--slate);font-size:0.9rem;line-height:1.7;margin-bottom:1rem;">
+        当前模式：<strong>${result.provider || 'Mock'}</strong> · ${result.mode === 'live' ? '真实 API 返回' : '本地 mock 回退'}
+      </p>
+      <div style="background:var(--ai-bg);border-radius:var(--r-md);padding:1rem;margin-bottom:1rem;">
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.4);font-family:var(--font-mono);letter-spacing:0.1em;margin-bottom:0.5rem;">// ${result.title || 'AI 摘要'}</div>
+        <div style="font-size:0.85rem;color:rgba(255,255,255,0.78);line-height:1.7;">${result.summary}</div>
+      </div>
+      <ul style="font-size:0.82rem;color:var(--slate);line-height:1.8;padding-left:1.2rem;margin-bottom:1rem;">
+        ${(result.bullets || []).map(item => `<li>${item}</li>`).join('')}
+      </ul>
+      <div style="background:var(--ai-bg);border-radius:var(--r-md);padding:1rem;margin-bottom:1rem;">
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.4);font-family:var(--font-mono);letter-spacing:0.1em;margin-bottom:0.5rem;">// 实际部署调用示例</div>
+        <pre style="font-size:0.75rem;color:rgba(255,255,255,0.7);font-family:var(--font-mono);overflow-x:auto;line-height:1.6;">fetch("./api/analyze", {
+  method: "POST",
+  body: JSON.stringify({ product })
+})</pre>
+      </div>
+      <div style="font-size:0.82rem;color:var(--slate);">
+        📌 默认优先 Gemini API；GitHub Pages 环境没有后端时会保持静态 mock 展示。
+      </div>
+    `;
   }
 
   window.showAIModal = showAIModal;
   window.showAIDemo = showAIModal;
+  window.showProductAI = (id) => showAIModal(products.find(p => p.id === id));
 
   /* ══════════════════════════════════════════════════════
      BUILT-IN PRODUCT DATA
