@@ -2,7 +2,8 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#FDFAF5">
   <title>EcoChic — AI 驱动的美妆决策助手</title>
   <link rel="stylesheet" href="./style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,11 +18,11 @@
       <span class="logo-sub">AI 美妆决策</span>
     </a>
     <ul class="header-nav">
-      <li><a href="#home" id="nav-home">首页</a></li>
-      <li><a href="#list" id="nav-list">产品库</a></li>
-      <li><a href="#versions" id="nav-versions">版本对比</a></li>
-      <li><a href="#test" id="nav-test">价值观测试</a></li>
-      <li><a href="#profile" id="nav-profile">个人中心</a></li>
+      <li><a href="#home" id="nav-home" data-nav="home">首页</a></li>
+      <li><a href="#list" id="nav-list" data-nav="list">产品库</a></li>
+      <li><a href="#versions" id="nav-versions" data-nav="versions">版本对比</a></li>
+      <li><a href="#test" id="nav-test" data-nav="test">价值观测试</a></li>
+      <li><a href="#profile" id="nav-profile" data-nav="profile">个人中心</a></li>
     </ul>
     <div class="header-search">
       <input id="product-search" type="search" placeholder="搜索产品 / 品牌 / 成分">
@@ -38,6 +39,14 @@
   </header>
 
   <main id="app"></main>
+
+  <nav class="mobile-bottom-nav" aria-label="移动端主导航">
+    <a href="#home" data-nav="home"><span>⌂</span>首页</a>
+    <a href="#list" data-nav="list"><span>⌕</span>产品</a>
+    <a href="#versions" data-nav="versions"><span>↔</span>对比</a>
+    <a href="#test" data-nav="test"><span>◇</span>测试</a>
+    <a href="#profile" data-nav="profile"><span>◉</span>我的</a>
+  </nav>
 
   <footer class="footer">
     <p>© 2026 <strong>EcoChic</strong> · 让每一次美妆消费都有依据、有温度、有价值观</p>

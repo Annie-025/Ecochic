@@ -26,6 +26,38 @@ npm start
 
 打开 `http://localhost:4173`。不要把 `.env` 或 API key 提交到前端代码。
 
+## 移动端部署演示
+
+GitHub Pages 链接适合手机现场展示静态版本：
+
+```text
+https://annie-025.github.io/Ecochic/
+```
+
+手机演示推荐路径：
+
+```text
+#list → 搜索「防晒」或「烟酰胺」
+#versions?compare=粉底液
+#versions?compare=防晒
+#detail?id=13
+```
+
+如果需要手机端演示真实 API，请部署到 Vercel 或 Netlify 这类支持 serverless 函数的平台。GitHub Pages 只能托管静态文件，不能安全保存 API key，因此线上 Pages 会自动 mock。
+
+### Vercel 真实 API 部署
+
+1. 将本仓库导入 Vercel。
+2. Framework 选择 Other，Build Command 留空，Output Directory 留空。
+3. 在 Project Settings → Environment Variables 添加：
+   - `DEEPSEEK_API_KEY`
+   - 可选：`DEEPSEEK_MODEL=deepseek-chat`
+   - 可选备用：`DASHSCOPE_API_KEY` 或 `GEMINI_API_KEY`
+4. 重新部署 Production。
+5. 手机打开 Vercel 生成的域名，进入产品详情页点击 AI 演示。
+
+`vercel.json` 已将 `/api/analyze` 指向 `api/analyze.js`，前端不会接触任何 API key。
+
 ## API 说明
 
 前端只调用 `./api/analyze`，不会保存任何 API key。真实模型调用在 `api/analyze.js` 中完成，可直接用于 Vercel/Netlify 等 serverless 环境。

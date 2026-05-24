@@ -137,6 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
     ['home','list','test','profile','versions'].forEach(id => {
       const el = document.getElementById(`nav-${id}`);
       if (el) el.classList.toggle('active', hash.startsWith(`#${id}`));
+      document.querySelectorAll(`[data-nav="${id}"]`).forEach(navLink => {
+        navLink.classList.toggle('active', hash.startsWith(`#${id}`));
+      });
     });
 
     if (hash === '#home' || hash === '' || hash === '#') return renderHome();

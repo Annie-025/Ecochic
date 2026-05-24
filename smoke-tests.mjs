@@ -9,6 +9,10 @@ const index = await text("./index.html");
 const api = await text("./api/analyze.js");
 const envExample = await text("./.env.example");
 const versions = JSON.parse(await text("./versions.json"));
+const css = await text("./style.css");
+const readme = await text("./README.md");
+const packageJson = JSON.parse(await text("./package.json"));
+const vercel = JSON.parse(await text("./vercel.json"));
 
 assert.equal(Array.isArray(products), true, "products.json must be an array");
 assert.equal(products.length >= 16, true, "demo should contain at least 16 products after SKU expansion");
@@ -41,13 +45,23 @@ assert.equal(
 );
 
 assert.match(index, /mobile-menu-toggle/, "mobile navigation toggle must exist");
+assert.match(index, /mobile-bottom-nav/, "mobile bottom navigation must exist");
+assert.match(index, /theme-color/, "mobile browser theme color must be configured");
 assert.match(index, /ai-client\.js/, "AI client module must be loaded before app script");
+assert.match(css, /safe-area-inset-bottom/, "mobile layout should respect safe area");
+assert.match(css, /@media \(max-width: 430px\)/, "small phone breakpoint should exist");
+assert.match(css, /\.mobile-bottom-nav/, "mobile bottom nav styles should exist");
 assert.match(api, /DEEPSEEK_API_KEY/, "AI backend should support DeepSeek");
 assert.match(api, /DASHSCOPE_API_KEY/, "AI backend should support DashScope/Qwen");
 assert.match(api, /GEMINI_API_KEY/, "AI backend should support Gemini");
 assert.match(envExample, /DEEPSEEK_API_KEY=/, ".env.example should document DeepSeek key");
 assert.match(envExample, /DASHSCOPE_API_KEY=/, ".env.example should document DashScope key");
 assert.doesNotMatch(index + script, /(?:DEEPSEEK|DASHSCOPE|QWEN|GEMINI)_API_KEY\s*=/, "front-end must not contain API key assignments");
+assert.equal(vercel.rewrites?.[0]?.source, "/api/analyze", "Vercel should route API requests");
+assert.equal(vercel.rewrites?.[0]?.destination, "/api/analyze.js", "Vercel should route to serverless function");
+assert.equal(packageJson.scripts.dev, "node local-server.js", "package should expose dev script for API demo");
+assert.match(readme, /Vercel/, "README should include Vercel deployment guidance");
+assert.match(readme, /DEEPSEEK_API_KEY/, "README should explain DeepSeek key setup");
 
 for (const versionProduct of versions) {
   assert.ok(versionProduct.comparison, `${versionProduct.product_name} missing comparison data`);

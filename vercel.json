@@ -1,0 +1,19 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/analyze",
+      "destination": "/api/analyze.js"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/analyze",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    }
+  ]
+}

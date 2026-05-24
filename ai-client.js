@@ -14,7 +14,7 @@
       bullets: [
         `好评信号：${positives.join("、")}`,
         `风险提示：${negatives.join("、")}`,
-        "真实 Gemini 调用需要通过本地后端或 serverless 函数注入 API key。",
+        "真实 API 调用需要通过本地后端或 Vercel Serverless 函数注入 API key。",
       ],
     };
   }
