@@ -51,7 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const PRODUCT_IMAGE_EXT = {
     1: 'jpeg', 2: 'png', 3: 'jpg', 4: 'jpeg', 5: 'png',
-    6: 'jpeg', 7: 'jpg', 8: 'jpeg', 9: 'jpg', 10: 'jpeg'
+    6: 'jpeg', 7: 'jpg', 8: 'jpeg', 9: 'jpg', 10: 'jpeg',
+    11: 'svg', 12: 'svg', 13: 'svg', 14: 'svg', 15: 'svg', 16: 'svg'
   };
 
   function normalizeImagePath(path) {
@@ -62,6 +63,23 @@ document.addEventListener('DOMContentLoaded', () => {
   function getProductImage(id) {
     const ext = PRODUCT_IMAGE_EXT[id] || 'jpeg';
     return `./pics/${id}.${ext}`;
+  }
+
+  function formatSources(sources = []) {
+    return sources.map((source, index) => `
+      <a class="compare-source-link" href="${source.url}" target="_blank" rel="noopener">
+        ${index + 1}. ${source.label} · ${source.type || 'source'} · ${source.as_of || '演示数据'}
+      </a>
+    `).join('');
+  }
+
+  function compareSummary(category, rows) {
+    if (rows.length < 2) return `${category} 当前暂无足够竞品样本，可先浏览产品详情。`;
+
+    const cheapest = [...rows].sort((a,b) => minPrice(a.product) - minPrice(b.product))[0];
+    const highestRated = [...rows].sort((a,b) => b.product.avg_rating - a.product.avg_rating)[0];
+    const highestEsg = [...rows].sort((a,b) => (b.product.esg?.score || 0) - (a.product.esg?.score || 0))[0];
+    return `预算优先看 ${cheapest.brand}，口碑评分优先看 ${highestRated.brand}，ESG 价值观优先看 ${highestEsg.brand}。结合肤质和场景，重点比较价格带、核心卖点与风险提示。`;
   }
 
   function minPrice(p) {
@@ -1025,6 +1043,10 @@ document.addEventListener('DOMContentLoaded', () => {
      VERSION COMPARISON
   ══════════════════════════════════════════════════════ */
   function renderVersionsList() {
+    const comparableCounts = productVersions.reduce((acc, item) => {
+      acc[item.category] = (acc[item.category] || 0) + 1;
+      return acc;
+    }, {});
     app.innerHTML = `
       <div class="section">
         <div class="section-label">✦ 产品版本对比</div>
@@ -1039,6 +1061,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <div class="version-card-name">${pv.product_name}</div>
                   <div class="version-card-meta">${pv.brand} · ${pv.category}</div>
                   <div class="version-card-tag">${pv.versions.length} 个版本</div>
+                  ${comparableCounts[pv.category] >= 2 ? `<div class="version-card-tag compare-ready">可跨品牌对比</div>` : ''}
                 </div>
               </div>
               <div class="version-card-right">
@@ -1070,6 +1093,16 @@ document.addEventListener('DOMContentLoaded', () => {
         <a href="#versions" class="back-link">← 返回版本对比</a>
         <div class="section-label">✦ ${pv.product_name}</div>
         <div class="section-title">版本选择</div>
+        ${pv.comparison ? `
+          <div class="compare-insight-card mt-2">
+            <div class="compare-insight-label">AI 决策定位</div>
+            <div class="compare-insight-text">${pv.comparison.positioning} · ${pv.comparison.best_for}</div>
+            <div class="compare-mini-tags">
+              ${(pv.comparison.claims || []).map(item => `<span>${item}</span>`).join('')}
+              ${(pv.comparison.risk_flags || []).slice(0, 2).map(item => `<span class="risk">${item}</span>`).join('')}
+            </div>
+          </div>
+        ` : ''}
         <div class="esg-grid" style="margin-top:1.5rem;">
           ${pv.versions.map(v => `
             <div class="esg-card">
@@ -1113,23 +1146,95 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderVersionCompare(category) {
     const categoryProducts = productVersions.filter(pv => pv.category === category);
+    const rows = categoryProducts.map(pv => ({
+      ...pv,
+      product: products.find(p => p.id === pv.product_id) || {},
+      comparison: pv.comparison || {}
+    }));
     app.innerHTML = `
       <div class="section">
         <a href="#versions" class="back-link">← 返回版本对比</a>
         <div class="section-label">✦ 跨品牌对比</div>
         <div class="section-title">${category} 版本对比</div>
-        ${categoryProducts.map(pv => `
-          <div style="margin-top:1.5rem;padding:1rem;background:var(--white);border-radius:12px;">
-            <div style="font-weight:600;margin-bottom:0.5rem;">${pv.product_name}</div>
-            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
-              ${pv.versions.map(v => `
-                <span style="padding:0.3rem 0.8rem;background:var(--ivory);border-radius:20px;font-size:0.85rem;">
-                  ${v.name} · ${v.适合肤色}
-                </span>
-              `).join('')}
-            </div>
+        <p class="section-subtitle">在原有版本/色号信息基础上，补充价格、定位、适合人群、成分风险和 ESG 说明，适合现场快速讲清楚「为什么选它」。</p>
+
+        ${rows.length < 2 ? `
+          <div class="empty-state">
+            <div class="empty-state-icon">↔</div>
+            <p>${category} 暂无足够跨品牌样本，请先查看产品库或等待后续补充。</p>
           </div>
-        `).join('')}
+        ` : `
+          <div class="compare-insight-card mt-3">
+            <div class="compare-insight-label">AI 决策摘要</div>
+            <div class="compare-insight-text">${compareSummary(category, rows)}</div>
+          </div>
+
+          <div class="compare-board mt-3">
+            ${rows.map(row => `
+              <article class="compare-product-card">
+                <div class="compare-product-head">
+                  <img src="${row.product.image || getProductImage(row.product_id)}" alt="${row.product_name}">
+                  <div>
+                    <div class="compare-brand">${row.brand}</div>
+                    <h3>${row.product_name}</h3>
+                    <div class="compare-price">${row.comparison.price_band || `¥${minPrice(row.product)}`}</div>
+                  </div>
+                </div>
+                <div class="compare-position">${row.comparison.positioning || '产品定位待补充'}</div>
+                <div class="compare-mini-tags">
+                  ${(row.comparison.claims || []).map(item => `<span>${item}</span>`).join('')}
+                </div>
+                <dl class="compare-facts">
+                  <div><dt>适合</dt><dd>${row.comparison.best_for || '暂无数据'}</dd></div>
+                  <div><dt>慎选</dt><dd>${row.comparison.not_for || '暂无数据'}</dd></div>
+                  <div><dt>成分</dt><dd>${row.comparison.formula_notes || '暂无数据'}</dd></div>
+                  <div><dt>ESG</dt><dd>${row.comparison.esg_brief || '暂无数据'}</dd></div>
+                </dl>
+                <div class="compare-risk-row">
+                  ${(row.comparison.risk_flags || []).map(item => `<span>${item}</span>`).join('')}
+                </div>
+                <div class="compare-version-row">
+                  ${row.versions.map(v => `<span>${v.name} · ${v.适合肤色}</span>`).join('')}
+                </div>
+              </article>
+            `).join('')}
+          </div>
+
+          <div class="compare-table-wrap mt-3">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>品牌/产品</th>
+                  <th>价格带</th>
+                  <th>定位</th>
+                  <th>适合人群</th>
+                  <th>风险提示</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${rows.map(row => `
+                  <tr>
+                    <td><strong>${row.brand}</strong><br><span>${row.product_name}</span></td>
+                    <td>${row.comparison.price_band || '-'}</td>
+                    <td>${row.comparison.positioning || '-'}</td>
+                    <td>${row.comparison.best_for || '-'}</td>
+                    <td>${(row.comparison.risk_flags || []).join('、') || '-'}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="compare-sources">
+            <div class="compare-sources-title">资料来源</div>
+            ${rows.map(row => `
+              <div class="compare-source-group">
+                <strong>${row.product_name}</strong>
+                ${formatSources(row.comparison.sources || [])}
+              </div>
+            `).join('')}
+          </div>
+        `}
       </div>
     `;
   }

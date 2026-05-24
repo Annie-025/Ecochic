@@ -45,7 +45,33 @@
         "特点": "遮瑕好，稍暗",
         "price_diff": 0
       }
-    ]
+    ],
+    "comparison": {
+      "price_band": "¥399-435",
+      "positioning": "高端长时持妆粉底",
+      "best_for": "油皮、混油皮、需要长时间带妆和高遮瑕的人",
+      "not_for": "干皮或偏好裸妆水光感的人",
+      "claims": [
+        "24h持妆",
+        "高遮瑕",
+        "控油抗汗"
+      ],
+      "formula_notes": "硅油和粉体成膜体系，妆效偏哑光持久。",
+      "risk_flags": [
+        "偏干",
+        "妆感厚重",
+        "色号选择门槛高"
+      ],
+      "esg_brief": "集团可持续披露较完整，单品动物测试需按地区核对。",
+      "sources": [
+        {
+          "label": "Estée Lauder 官网",
+          "url": "https://www.esteelauder.com/product/643/22830/product-catalog/makeup/face/foundation/double-wear/stay-in-place-foundation-original-formula",
+          "type": "official",
+          "as_of": "2026-05-24"
+        }
+      ]
+    }
   },
   {
     "product_id": 2,
@@ -85,7 +111,197 @@
         "特点": "温柔日常",
         "price_diff": 0
       }
-    ]
+    ],
+    "comparison": {
+      "price_band": "¥298-335",
+      "positioning": "高端滋润膏体口红",
+      "best_for": "想要滋润、包装质感和通勤色的人",
+      "not_for": "追求极强持久和完全不沾杯的人",
+      "claims": [
+        "滋润",
+        "显色",
+        "包装高级"
+      ],
+      "formula_notes": "蜡质与油脂体系，妆效比液体唇釉更滋润。",
+      "risk_flags": [
+        "沾杯",
+        "价格偏高",
+        "持久度一般"
+      ],
+      "esg_brief": "集团社会责任披露较多，单品包装可持续信息有限。",
+      "sources": [
+        {
+          "label": "Lancôme 官网/公开商品页",
+          "url": "https://www.lancome-usa.com/makeup/lip-makeup/lipstick/",
+          "type": "official",
+          "as_of": "2026-05-24"
+        }
+      ]
+    }
+  },
+  {
+    "product_id": 3,
+    "product_name": "SK-II神仙水精华液",
+    "brand": "SK-II",
+    "category": "精华",
+    "versions": [
+      {
+        "version_id": "160ml",
+        "name": "160ml 标准装",
+        "color": "透明水状",
+        "适合肤色": "大多数肤质",
+        "特点": "入门规格"
+      },
+      {
+        "version_id": "230ml",
+        "name": "230ml 大容量",
+        "color": "透明水状",
+        "适合肤色": "长期使用",
+        "特点": "经典正装"
+      },
+      {
+        "version_id": "travel",
+        "name": "旅行装",
+        "color": "透明水状",
+        "适合肤色": "先试用",
+        "特点": "便携"
+      }
+    ],
+    "comparison": {
+      "price_band": "¥1499-1650",
+      "positioning": "高端发酵护肤精华",
+      "best_for": "油皮、混油皮、想要提亮和肤质细腻的人",
+      "not_for": "预算敏感或屏障受损容易刺痛的人",
+      "claims": [
+        "提亮",
+        "细腻肤质",
+        "油水平衡"
+      ],
+      "formula_notes": "核心为发酵产物滤液，偏长期肤质改善。",
+      "risk_flags": [
+        "价格高",
+        "发酵气味",
+        "敏感肌需试用"
+      ],
+      "esg_brief": "集团供应链披露较成熟，但单品动物测试和地区政策需核对。",
+      "sources": [
+        {
+          "label": "SK-II 官网/公开商品页",
+          "url": "https://www.sk-ii.com/product/facial-treatment-essence",
+          "type": "official",
+          "as_of": "2026-05-24"
+        }
+      ]
+    }
+  },
+  {
+    "product_id": 4,
+    "product_name": "花西子同心锁口红",
+    "brand": "花西子",
+    "category": "口红",
+    "versions": [
+      {
+        "version_id": "M501",
+        "name": "M501 朱砂红",
+        "color": "复古朱砂红",
+        "适合肤色": "黄皮/暖皮",
+        "特点": "国风经典红"
+      },
+      {
+        "version_id": "M502",
+        "name": "M502 绛纱红",
+        "color": "豆沙红",
+        "适合肤色": "通勤日常",
+        "特点": "温柔显气色"
+      },
+      {
+        "version_id": "M520",
+        "name": "M520 锁心红",
+        "color": "正红色",
+        "适合肤色": "所有肤色",
+        "特点": "礼赠属性强"
+      }
+    ],
+    "comparison": {
+      "price_band": "¥199-229",
+      "positioning": "国风雕花膏体口红",
+      "best_for": "看重包装、礼赠属性和国风审美的人",
+      "not_for": "追求极强持久和轻量包装的人",
+      "claims": [
+        "国风包装",
+        "雕花工艺",
+        "顺滑上色"
+      ],
+      "formula_notes": "蜡质膏体，包装和视觉体验占比高。",
+      "risk_flags": [
+        "易掉色",
+        "显唇纹",
+        "包装溢价"
+      ],
+      "esg_brief": "本土供应链响应快，公开 ESG 资料仍可增强。",
+      "sources": [
+        {
+          "label": "花西子官网/公开商品页",
+          "url": "https://www.florasis.com/",
+          "type": "official",
+          "as_of": "2026-05-24"
+        }
+      ]
+    }
+  },
+  {
+    "product_id": 5,
+    "product_name": "珀莱雅双抗精华",
+    "brand": "珀莱雅",
+    "category": "精华",
+    "versions": [
+      {
+        "version_id": "30ml",
+        "name": "30ml 标准装",
+        "color": "乳液状",
+        "适合肤色": "日常通勤",
+        "特点": "早八抗氧化"
+      },
+      {
+        "version_id": "50ml",
+        "name": "50ml 大容量",
+        "color": "乳液状",
+        "适合肤色": "长期使用",
+        "特点": "性价比高"
+      },
+      {
+        "version_id": "set",
+        "name": "双支套装",
+        "color": "乳液状",
+        "适合肤色": "复购囤货",
+        "特点": "活动价更优"
+      }
+    ],
+    "comparison": {
+      "price_band": "¥219-249",
+      "positioning": "国货抗氧化精华",
+      "best_for": "预算友好、关注去黄提亮和早八抗氧化的人",
+      "not_for": "烟酰胺不耐受或讨厌微粘肤感的人",
+      "claims": [
+        "抗氧化",
+        "去黄提亮",
+        "性价比"
+      ],
+      "formula_notes": "麦角硫因、虾青素、烟酰胺组合，偏功效护肤。",
+      "risk_flags": [
+        "质地略粘",
+        "不耐受可能泛红"
+      ],
+      "esg_brief": "国产品牌供应链与减塑信息适合做 ESG 正向案例。",
+      "sources": [
+        {
+          "label": "珀莱雅官方/公开商品页",
+          "url": "https://www.proya.com/",
+          "type": "official",
+          "as_of": "2026-05-24"
+        }
+      ]
+    }
   },
   {
     "product_id": 6,
@@ -125,7 +341,81 @@
         "特点": "气场全开",
         "price_diff": 0
       }
-    ]
+    ],
+    "comparison": {
+      "price_band": "¥269-290",
+      "positioning": "高端柔雾液体唇釉",
+      "best_for": "喜欢薄涂柔雾、颜色饱和和高级妆效的人",
+      "not_for": "唇部极干或讨厌卸妆成本的人",
+      "claims": [
+        "丝绒质地",
+        "颜色饱和",
+        "薄涂高级"
+      ],
+      "formula_notes": "液体成膜体系，柔雾感强但卸妆要求高。",
+      "risk_flags": [
+        "沾杯",
+        "难卸",
+        "状态差显纹"
+      ],
+      "esg_brief": "品牌表达多元，包装可持续信息有限。",
+      "sources": [
+        {
+          "label": "NARS 官网/公开商品页",
+          "url": "https://www.narscosmetics.com/",
+          "type": "official",
+          "as_of": "2026-05-24"
+        }
+      ]
+    }
+  },
+  {
+    "product_id": 7,
+    "product_name": "欧莱雅紫熨斗眼霜",
+    "brand": "欧莱雅",
+    "category": "眼霜",
+    "versions": [
+      {
+        "version_id": "30ml",
+        "name": "30ml 正装",
+        "color": "乳霜质地",
+        "适合肤色": "初抗老",
+        "特点": "淡纹保湿"
+      },
+      {
+        "version_id": "15x2",
+        "name": "15ml*2",
+        "color": "乳霜质地",
+        "适合肤色": "性价比组合",
+        "特点": "便携分装"
+      }
+    ],
+    "comparison": {
+      "price_band": "¥259-289",
+      "positioning": "初抗老淡纹眼霜",
+      "best_for": "想要玻色因抗老、保湿和性价比的人",
+      "not_for": "眼周极敏感或追求极简配方的人",
+      "claims": [
+        "淡纹",
+        "保湿",
+        "性价比"
+      ],
+      "formula_notes": "玻色因、透明质酸和咖啡因组合，偏初抗老。",
+      "risk_flags": [
+        "搓泥",
+        "辣眼睛",
+        "深纹改善有限"
+      ],
+      "esg_brief": "集团 ESG 披露成熟，单品包装减量信息一般。",
+      "sources": [
+        {
+          "label": "L’Oréal Paris 官网/公开商品页",
+          "url": "https://www.lorealparisusa.com/skin-care/eye-care",
+          "type": "official",
+          "as_of": "2026-05-24"
+        }
+      ]
+    }
   },
   {
     "product_id": 8,
@@ -165,7 +455,88 @@
         "特点": "闪片好看",
         "price_diff": 20
       }
-    ]
+    ],
+    "comparison": {
+      "price_band": "¥199-239",
+      "positioning": "韩系日常九宫格眼影",
+      "best_for": "新手、通勤、喜欢粉棕/橘棕日常配色的人",
+      "not_for": "追求超强持久或极低飞粉的人",
+      "claims": [
+        "粉质细腻",
+        "颜色百搭",
+        "新手友好"
+      ],
+      "formula_notes": "云母和着色粉体为主，亮片色提升妆效层次。",
+      "risk_flags": [
+        "飞粉",
+        "持久一般",
+        "亮片利用率低"
+      ],
+      "esg_brief": "公开 ESG 信息有限，包装减量和供应链透明度可提升。",
+      "sources": [
+        {
+          "label": "3CE 官方商品页",
+          "url": "https://www.3cecosmetics.com/all-products/eyes/eyeshadow/3ce-multi-eye-color-palette",
+          "type": "official",
+          "as_of": "2026-05-24"
+        }
+      ]
+    }
+  },
+  {
+    "product_id": 9,
+    "product_name": "安热沙小金瓶防晒",
+    "brand": "安热沙",
+    "category": "防晒",
+    "versions": [
+      {
+        "version_id": "gold",
+        "name": "经典小金瓶",
+        "color": "乳液质地",
+        "适合肤色": "户外/油皮",
+        "特点": "防水防汗"
+      },
+      {
+        "version_id": "pink",
+        "name": "粉金瓶",
+        "color": "乳液质地",
+        "适合肤色": "敏感肌",
+        "特点": "温和一些"
+      },
+      {
+        "version_id": "gel",
+        "name": "水能户外防晒凝胶",
+        "color": "凝胶质地",
+        "适合肤色": "通勤身体",
+        "特点": "肤感清爽"
+      }
+    ],
+    "comparison": {
+      "price_band": "¥228-258",
+      "positioning": "户外防水防汗防晒",
+      "best_for": "户外、暴晒、流汗场景和高防护需求用户",
+      "not_for": "酒精敏感、干皮或讨厌卸除成本的人",
+      "claims": [
+        "防晒强",
+        "防水防汗",
+        "户外适用"
+      ],
+      "formula_notes": "化学/物理防晒剂与成膜体系，强调高防护。",
+      "risk_flags": [
+        "酒精味",
+        "拔干",
+        "难卸"
+      ],
+      "esg_brief": "防晒剂环境争议需关注，包装回收信息一般。",
+      "sources": [
+        {
+          "label": "ANESSA 官网/公开商品页",
+          "url": "https://www.shiseido.co.jp/anessa/en/",
+          "type": "official",
+          "as_of": "2026-05-24"
+        }
+      ]
+    }
   },
   {
     "product_id": 10,
@@ -205,6 +576,366 @@
         "特点": "秋冬必备",
         "price_diff": 0
       }
-    ]
+    ],
+    "comparison": {
+      "price_band": "¥119-139",
+      "positioning": "平价多色动物主题眼影",
+      "best_for": "预算有限、想尝试多配色和玩妆的人",
+      "not_for": "追求高级粉质和强持久的人",
+      "claims": [
+        "配色丰富",
+        "显色高",
+        "价格亲民"
+      ],
+      "formula_notes": "粉体和着色剂为主，主题包装增强辨识度。",
+      "risk_flags": [
+        "飞粉严重",
+        "持久差",
+        "包装质感一般"
+      ],
+      "esg_brief": "动物主题有传播价值，但包装塑料和供应链披露仍可增强。",
+      "sources": [
+        {
+          "label": "Perfect Diary 官方商品页",
+          "url": "https://www.perfectdiary.com/products/explorer-eyeshadow-palette-09-cat-2",
+          "type": "official",
+          "as_of": "2026-05-24"
+        }
+      ]
+    }
+  },
+  {
+    "product_id": 11,
+    "product_name": "Maybelline Fit Me哑光粉底液",
+    "brand": "Maybelline",
+    "category": "粉底液",
+    "versions": [
+      {
+        "version_id": "112",
+        "name": "112 Natural Ivory",
+        "color": "自然白",
+        "适合肤色": "偏白肤色",
+        "特点": "开架热门色"
+      },
+      {
+        "version_id": "120",
+        "name": "120 Classic Ivory",
+        "color": "象牙色",
+        "适合肤色": "黄一白/中性调",
+        "特点": "自然哑光"
+      },
+      {
+        "version_id": "220",
+        "name": "220 Natural Beige",
+        "color": "自然米色",
+        "适合肤色": "自然肤色",
+        "特点": "日常百搭"
+      }
+    ],
+    "comparison": {
+      "price_band": "¥89-109",
+      "positioning": "平价控油粉底",
+      "best_for": "油皮、混油皮、预算敏感用户",
+      "not_for": "干皮或追求奶油光泽妆效用户",
+      "claims": [
+        "控油",
+        "柔焦毛孔",
+        "自然哑光"
+      ],
+      "formula_notes": "以硅、粉体和成膜体系为主，偏控油妆效。",
+      "risk_flags": [
+        "干皮可能拔干",
+        "色号需试色",
+        "可能氧化"
+      ],
+      "esg_brief": "品牌 ESG 信息以集团披露为主，单品透明度一般。",
+      "sources": [
+        {
+          "label": "Maybelline 官网",
+          "url": "https://www.maybelline.com/face-makeup/foundation-makeup/fit-me-matte-poreless-foundation",
+          "type": "official",
+          "as_of": "2026-05-24"
+        },
+        {
+          "label": "公开编辑/电商信息",
+          "url": "https://www.whowhatwear.com/beauty/makeup/best-drugstore-foundation-products",
+          "type": "commerce",
+          "as_of": "2026-05-24"
+        }
+      ]
+    }
+  },
+  {
+    "product_id": 12,
+    "product_name": "L’Oréal Infallible Fresh Wear粉底液",
+    "brand": "L'Oréal Paris",
+    "category": "粉底液",
+    "versions": [
+      {
+        "version_id": "015",
+        "name": "015 Porcelain",
+        "color": "瓷白色",
+        "适合肤色": "白皙肤色",
+        "特点": "轻薄长持"
+      },
+      {
+        "version_id": "120",
+        "name": "120 Vanilla",
+        "color": "自然白",
+        "适合肤色": "黄一白",
+        "特点": "通勤自然"
+      },
+      {
+        "version_id": "480",
+        "name": "480 Radiant Sand",
+        "color": "暖沙色",
+        "适合肤色": "自然暖调",
+        "特点": "官方示例色"
+      }
+    ],
+    "comparison": {
+      "price_band": "¥159-189",
+      "positioning": "轻薄长持粉底",
+      "best_for": "想要轻薄自然、长时间通勤妆效的人",
+      "not_for": "酒精敏感、香精敏感或极干皮",
+      "claims": [
+        "轻薄",
+        "长效",
+        "自然不暗沉"
+      ],
+      "formula_notes": "成膜体系搭配酒精挥发，肤感轻但敏感肌需试用。",
+      "risk_flags": [
+        "酒精味",
+        "香精",
+        "干皮卡纹"
+      ],
+      "esg_brief": "集团 ESG 披露完整，单品包装信息一般。",
+      "sources": [
+        {
+          "label": "L’Oréal Paris 官网",
+          "url": "https://www.lorealparisusa.com/makeup/face/foundation-makeup/infallible-32-hour-fresh-wear-foundation-lightweight-480-radiant-sand",
+          "type": "official",
+          "as_of": "2026-05-24"
+        }
+      ]
+    }
+  },
+  {
+    "product_id": 13,
+    "product_name": "La Roche-Posay Anthelios SPF50",
+    "brand": "La Roche-Posay",
+    "category": "防晒",
+    "versions": [
+      {
+        "version_id": "uv-control",
+        "name": "UV Control SPF50",
+        "color": "乳液质地",
+        "适合肤色": "痘肌/泛红肌",
+        "特点": "广谱防晒"
+      },
+      {
+        "version_id": "uvmune",
+        "name": "UVMUNE 400 Invisible Fluid",
+        "color": "轻薄流动质地",
+        "适合肤色": "通勤防晒",
+        "特点": "轻薄不厚重"
+      }
+    ],
+    "comparison": {
+      "price_band": "¥219-249",
+      "positioning": "医研敏感肌防晒",
+      "best_for": "敏感肌、痘肌、泛红肌和日常通勤防晒",
+      "not_for": "追求极低价格或极强户外防水的人",
+      "claims": [
+        "敏感肌友好",
+        "广谱防晒",
+        "医研背书"
+      ],
+      "formula_notes": "防晒剂搭配舒缓保湿成分，具体肤感因版本不同。",
+      "risk_flags": [
+        "价格偏高",
+        "部分版本搓泥",
+        "版本差异大"
+      ],
+      "esg_brief": "品牌安全测试和配方标准清晰，防晒剂环境影响需持续关注。",
+      "sources": [
+        {
+          "label": "La Roche-Posay 官网",
+          "url": "https://www.laroche-posay.us/our-products/sun/face-sunscreen/anthelios-uv-control-sunscreen-spf-50-3606000622111.html",
+          "type": "official",
+          "as_of": "2026-05-24"
+        },
+        {
+          "label": "DailyMed 防晒成分公开资料",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/getFile.cfm?setid=c0f7ae46-7161-4d48-9386-007bfafecfd5&type=pdf",
+          "type": "commerce",
+          "as_of": "2026-05-24"
+        }
+      ]
+    }
+  },
+  {
+    "product_id": 14,
+    "product_name": "CeraVe Eye Repair Cream",
+    "brand": "CeraVe",
+    "category": "眼霜",
+    "versions": [
+      {
+        "version_id": "14ml",
+        "name": "14ml 标准装",
+        "color": "白色乳霜",
+        "适合肤色": "眼周干燥",
+        "特点": "基础修护"
+      },
+      {
+        "version_id": "trial",
+        "name": "小样/旅行装",
+        "color": "白色乳霜",
+        "适合肤色": "先试用",
+        "特点": "低风险尝试"
+      }
+    ],
+    "comparison": {
+      "price_band": "¥109-128",
+      "positioning": "基础修护眼霜",
+      "best_for": "眼周干燥、屏障脆弱、想要温和保湿的人",
+      "not_for": "追求强淡纹或重度黑眼圈改善的人",
+      "claims": [
+        "神经酰胺",
+        "无香精",
+        "基础保湿"
+      ],
+      "formula_notes": "神经酰胺、透明质酸、烟酰胺组合，偏屏障护理。",
+      "risk_flags": [
+        "淡纹弱",
+        "肤感基础",
+        "少数人烟酰胺不耐受"
+      ],
+      "esg_brief": "品牌皮肤健康定位清晰，单品可持续披露有限。",
+      "sources": [
+        {
+          "label": "CeraVe 官网",
+          "url": "https://prd-cd-us.cerave.com/skincare/moisturizers/eye-repair-cream",
+          "type": "official",
+          "as_of": "2026-05-24"
+        }
+      ]
+    }
+  },
+  {
+    "product_id": 15,
+    "product_name": "MAC Ruby Woo复古哑光唇膏",
+    "brand": "MAC",
+    "category": "唇釉",
+    "versions": [
+      {
+        "version_id": "ruby-woo",
+        "name": "Ruby Woo",
+        "color": "蓝调正红",
+        "适合肤色": "多数肤色",
+        "特点": "经典复古红"
+      },
+      {
+        "version_id": "all-fired-up",
+        "name": "All Fired Up",
+        "color": "玫红",
+        "适合肤色": "冷调妆容",
+        "特点": "强显色"
+      },
+      {
+        "version_id": "dangerous",
+        "name": "Dangerous",
+        "color": "橘调红",
+        "适合肤色": "暖皮",
+        "特点": "活力红唇"
+      }
+    ],
+    "comparison": {
+      "price_band": "¥199-220",
+      "positioning": "经典哑光红唇",
+      "best_for": "复古红唇、舞台妆、需要强显色的人",
+      "not_for": "唇部干燥或偏好水润妆效的人",
+      "claims": [
+        "蓝调正红",
+        "强显色",
+        "复古哑光"
+      ],
+      "formula_notes": "蜡质和高着色体系，哑光妆效鲜明。",
+      "risk_flags": [
+        "偏干",
+        "显唇纹",
+        "卸妆难"
+      ],
+      "esg_brief": "品牌多元审美表达强，包装回收项目有历史代表性。",
+      "sources": [
+        {
+          "label": "MAC 官网",
+          "url": "https://www.maccosmetics.com/product/13854/52593/products/makeup/lips/lipstick/retro-matte-lipstick?shade=Ruby_Woo",
+          "type": "official",
+          "as_of": "2026-05-24"
+        },
+        {
+          "label": "Ulta/MAC 公开商品信息",
+          "url": "https://www.ulta.com/p/lipstick-matte-xlsImpprod15921176?sku=2511153",
+          "type": "commerce",
+          "as_of": "2026-05-24"
+        }
+      ]
+    }
+  },
+  {
+    "product_id": 16,
+    "product_name": "SHISEIDO Ultimune红腰子精华",
+    "brand": "SHISEIDO",
+    "category": "精华",
+    "versions": [
+      {
+        "version_id": "30ml",
+        "name": "30ml 标准装",
+        "color": "红色瓶身",
+        "适合肤色": "初次尝试",
+        "特点": "肌底维稳"
+      },
+      {
+        "version_id": "50ml",
+        "name": "50ml 正装",
+        "color": "红色瓶身",
+        "适合肤色": "长期使用",
+        "特点": "高端维稳"
+      },
+      {
+        "version_id": "refill",
+        "name": "50ml 替换装",
+        "color": "替换芯",
+        "适合肤色": "复购用户",
+        "特点": "减少包装"
+      }
+    ],
+    "comparison": {
+      "price_band": "¥760-820",
+      "positioning": "高端维稳肌底精华",
+      "best_for": "换季维稳、肤感党、预算较高用户",
+      "not_for": "追求快速强功效或预算敏感用户",
+      "claims": [
+        "维稳",
+        "肤感好",
+        "替换装"
+      ],
+      "formula_notes": "保湿溶剂、植萃和香精体系，偏长期维稳。",
+      "risk_flags": [
+        "价格高",
+        "香味",
+        "酒精敏感慎用"
+      ],
+      "esg_brief": "集团可持续和替换装信息较完整，适合与高端护肤比较。",
+      "sources": [
+        {
+          "label": "SHISEIDO 官方新闻资料",
+          "url": "https://corp.shiseido.com/en/newsimg/3953_d3b90_en.pdf",
+          "type": "official",
+          "as_of": "2026-05-24"
+        }
+      ]
+    }
   }
 ]

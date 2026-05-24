@@ -11,7 +11,8 @@ const PROVIDERS = [
   },
   {
     name: "Qwen",
-    keyEnv: "QWEN_API_KEY",
+    keyEnv: "DASHSCOPE_API_KEY",
+    legacyKeyEnv: "QWEN_API_KEY",
     model: QWEN_MODEL,
     endpoint: process.env.QWEN_BASE_URL || "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
   },
@@ -54,7 +55,7 @@ function buildPrompt(product) {
 }
 
 async function callOpenAICompatible(provider, product) {
-  const key = process.env[provider.keyEnv];
+  const key = process.env[provider.keyEnv] || (provider.legacyKeyEnv ? process.env[provider.legacyKeyEnv] : "");
   if (!key) return null;
 
   const response = await fetch(provider.endpoint, {

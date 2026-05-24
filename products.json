@@ -6,9 +6,21 @@
     "category": "粉底液",
     "image": "/pics/1.jpeg",
     "variants": [
-      {"name": "17#象牙色", "shade": "黄一白", "suitable": "适合肤色偏白"},
-      {"name": "36#深色", "shade": "黄二白", "suitable": "适合自然肤色"},
-      {"name": "62#自然色", "shade": "黄一白/黄二白", "suitable": "适合大多数肤色"}
+      {
+        "name": "17#象牙色",
+        "shade": "黄一白",
+        "suitable": "适合肤色偏白"
+      },
+      {
+        "name": "36#深色",
+        "shade": "黄二白",
+        "suitable": "适合自然肤色"
+      },
+      {
+        "name": "62#自然色",
+        "shade": "黄一白/黄二白",
+        "suitable": "适合大多数肤色"
+      }
     ],
     "price_taobao": 420,
     "price_jd": 435,
@@ -16,10 +28,26 @@
     "coupon_info": "满400减30",
     "avg_rating": 4.8,
     "comment_summary": "好评集中在遮瑕、持妆和控油表现，适合油皮与通勤长时间带妆；差评主要来自质地偏干、妆感偏厚、色号选择门槛高。",
-    "comment_positive": ["遮瑕效果好", "持妆久", "控油不错"],
-    "comment_negative": ["偏干", "妆感厚重", "色号难选"],
-    "ingredients": ["水", "环五聚二甲基硅氧烷", "二氧化钛", "云母", "氧化铁类"],
-    "risk_ingredients": ["无"],
+    "comment_positive": [
+      "遮瑕效果好",
+      "持妆久",
+      "控油不错"
+    ],
+    "comment_negative": [
+      "偏干",
+      "妆感厚重",
+      "色号难选"
+    ],
+    "ingredients": [
+      "水",
+      "环五聚二甲基硅氧烷",
+      "二氧化钛",
+      "云母",
+      "氧化铁类"
+    ],
+    "risk_ingredients": [
+      "无"
+    ],
     "esg": {
       "score": 85,
       "gender": "女性高管比例较高，母公司公开披露多元与包容目标。",
@@ -35,8 +63,16 @@
     "category": "口红",
     "image": "/pics/2.png",
     "variants": [
-      {"name": "196#朱砂红", "shade": "正红色", "suitable": "适合所有肤色"},
-      {"name": "274#法式玫瑰", "shade": "粉玫瑰", "suitable": "适合白皮"}
+      {
+        "name": "196#朱砂红",
+        "shade": "正红色",
+        "suitable": "适合所有肤色"
+      },
+      {
+        "name": "274#法式玫瑰",
+        "shade": "粉玫瑰",
+        "suitable": "适合白皮"
+      }
     ],
     "price_taobao": 320,
     "price_jd": 335,
@@ -44,10 +80,27 @@
     "coupon_info": "满299减20",
     "avg_rating": 4.7,
     "comment_summary": "用户喜欢它的滋润度、显色和包装质感，送礼属性强；主要槽点是沾杯、价格偏高、持久度不如哑光唇釉。",
-    "comment_positive": ["滋润", "颜色好看", "包装高级"],
-    "comment_negative": ["沾杯", "贵", "持久度一般"],
-    "ingredients": ["蜂蜡", "羊毛脂衍生物", "植物油脂", "着色剂", "香精"],
-    "risk_ingredients": ["羊毛脂衍生物（部分人可能过敏）", "香精"],
+    "comment_positive": [
+      "滋润",
+      "颜色好看",
+      "包装高级"
+    ],
+    "comment_negative": [
+      "沾杯",
+      "贵",
+      "持久度一般"
+    ],
+    "ingredients": [
+      "蜂蜡",
+      "羊毛脂衍生物",
+      "植物油脂",
+      "着色剂",
+      "香精"
+    ],
+    "risk_ingredients": [
+      "羊毛脂衍生物（部分人可能过敏）",
+      "香精"
+    ],
     "esg": {
       "score": 78,
       "gender": "品牌持续投放女性公益与教育项目，集团层面有性别平等披露。",
@@ -63,8 +116,16 @@
     "category": "精华",
     "image": "pics/3.jpg",
     "variants": [
-      {"name": "经典版 230ml", "size": "230ml", "suitable": "适合大多数肤质"},
-      {"name": "新版 165ml", "size": "165ml", "suitable": "便携出差"}
+      {
+        "name": "经典版 230ml",
+        "size": "230ml",
+        "suitable": "适合大多数肤质"
+      },
+      {
+        "name": "新版 165ml",
+        "size": "165ml",
+        "suitable": "便携出差"
+      }
     ],
     "price_taobao": 1590,
     "price_jd": 1650,
@@ -72,10 +133,25 @@
     "coupon_info": "满1500减100",
     "avg_rating": 4.9,
     "comment_summary": "高分评价来自肤质细腻、提亮和油水平衡改善；负面反馈集中在价格高、发酵气味明显、敏感肌初期可能不适。",
-    "comment_positive": ["提亮肤色", "改善肤质", "控油平衡"],
-    "comment_negative": ["贵", "发酵味明显", "敏感肌慎用"],
-    "ingredients": ["半乳糖酵母样菌发酵产物滤液", "丁二醇", "戊二醇", "苯甲酸钠"],
-    "risk_ingredients": ["发酵产物（屏障受损时需试用）"],
+    "comment_positive": [
+      "提亮肤色",
+      "改善肤质",
+      "控油平衡"
+    ],
+    "comment_negative": [
+      "贵",
+      "发酵味明显",
+      "敏感肌慎用"
+    ],
+    "ingredients": [
+      "半乳糖酵母样菌发酵产物滤液",
+      "丁二醇",
+      "戊二醇",
+      "苯甲酸钠"
+    ],
+    "risk_ingredients": [
+      "发酵产物（屏障受损时需试用）"
+    ],
     "esg": {
       "score": 70,
       "gender": "母公司有多元化目标披露，品牌单独维度信息有限。",
@@ -91,8 +167,16 @@
     "category": "口红",
     "image": "/pics/4.jpeg",
     "variants": [
-      {"name": "M501朱砂红", "color": "朱砂红", "suitable": "适合复古妆容"},
-      {"name": "M502绛纱红", "color": "豆沙红", "suitable": "适合日常通勤"}
+      {
+        "name": "M501朱砂红",
+        "color": "朱砂红",
+        "suitable": "适合复古妆容"
+      },
+      {
+        "name": "M502绛纱红",
+        "color": "豆沙红",
+        "suitable": "适合日常通勤"
+      }
     ],
     "price_taobao": 219,
     "price_jd": 229,
@@ -100,10 +184,26 @@
     "coupon_info": "满199减10",
     "avg_rating": 4.6,
     "comment_summary": "正向反馈集中在国风包装、雕花工艺和顺滑质地；负面反馈多为掉色、显唇纹和包装溢价感。",
-    "comment_positive": ["包装精美", "雕花精致", "膏体顺滑"],
-    "comment_negative": ["易掉色", "显唇纹", "包装溢价"],
-    "ingredients": ["蜂蜡", "合成蜡", "植物油", "云母", "着色剂"],
-    "risk_ingredients": ["蜂蜡（非纯素）"],
+    "comment_positive": [
+      "包装精美",
+      "雕花精致",
+      "膏体顺滑"
+    ],
+    "comment_negative": [
+      "易掉色",
+      "显唇纹",
+      "包装溢价"
+    ],
+    "ingredients": [
+      "蜂蜡",
+      "合成蜡",
+      "植物油",
+      "云母",
+      "着色剂"
+    ],
+    "risk_ingredients": [
+      "蜂蜡（非纯素）"
+    ],
     "esg": {
       "score": 82,
       "gender": "女性消费洞察和女性员工占比较高，公开治理数据仍可增强。",
@@ -119,8 +219,16 @@
     "category": "精华",
     "image": "/pics/5.png",
     "variants": [
-      {"name": "30ml 标准装", "size": "30ml", "suitable": "适合早八人"},
-      {"name": "50ml 大容量", "size": "50ml", "suitable": "适合家用"}
+      {
+        "name": "30ml 标准装",
+        "size": "30ml",
+        "suitable": "适合早八人"
+      },
+      {
+        "name": "50ml 大容量",
+        "size": "50ml",
+        "suitable": "适合家用"
+      }
     ],
     "price_taobao": 239,
     "price_jd": 249,
@@ -128,10 +236,26 @@
     "coupon_info": "满200减20",
     "avg_rating": 4.8,
     "comment_summary": "用户认可抗氧化、去黄提亮和性价比，是预算友好的功效精华；差评集中在质地略粘、烟酰胺不耐受和搓泥搭配问题。",
-    "comment_positive": ["去黄提亮", "抗氧化", "性价比高"],
-    "comment_negative": ["质地粘", "部分人不耐受", "搭配防晒可能搓泥"],
-    "ingredients": ["麦角硫因", "虾青素", "烟酰胺", "肌肽", "生育酚"],
-    "risk_ingredients": ["烟酰胺（不耐受可能泛红）"],
+    "comment_positive": [
+      "去黄提亮",
+      "抗氧化",
+      "性价比高"
+    ],
+    "comment_negative": [
+      "质地粘",
+      "部分人不耐受",
+      "搭配防晒可能搓泥"
+    ],
+    "ingredients": [
+      "麦角硫因",
+      "虾青素",
+      "烟酰胺",
+      "肌肽",
+      "生育酚"
+    ],
+    "risk_ingredients": [
+      "烟酰胺（不耐受可能泛红）"
+    ],
     "esg": {
       "score": 88,
       "gender": "女性消费者沟通友好，组织多元议题参与度较高。",
@@ -147,9 +271,24 @@
     "category": "唇釉",
     "image": "/pics/6.jpeg",
     "variants": [
-      {"name": "柔雾红缪斯", "color": "正红色", "finish": "柔雾", "suitable": "适合所有肤色"},
-      {"name": "柔雾玫瑰", "color": "玫瑰粉", "finish": "柔雾", "suitable": "适合白皮"},
-      {"name": "柔雾焦糖", "color": "焦糖色", "finish": "柔雾", "suitable": "适合欧美妆"}
+      {
+        "name": "柔雾红缪斯",
+        "color": "正红色",
+        "finish": "柔雾",
+        "suitable": "适合所有肤色"
+      },
+      {
+        "name": "柔雾玫瑰",
+        "color": "玫瑰粉",
+        "finish": "柔雾",
+        "suitable": "适合白皮"
+      },
+      {
+        "name": "柔雾焦糖",
+        "color": "焦糖色",
+        "finish": "柔雾",
+        "suitable": "适合欧美妆"
+      }
     ],
     "price_taobao": 280,
     "price_jd": 290,
@@ -157,10 +296,26 @@
     "coupon_info": "满269减10",
     "avg_rating": 4.7,
     "comment_summary": "好评集中在高级哑光、颜色饱和和薄涂不厚重；差评主要是沾杯、卸妆成本高和唇部状态不好时显纹。",
-    "comment_positive": ["丝绒质地", "不拔干", "颜色饱和"],
-    "comment_negative": ["沾杯", "难卸", "状态差时显唇纹"],
-    "ingredients": ["聚二甲基硅氧烷", "云母", "二氧化硅", "着色剂", "成膜剂"],
-    "risk_ingredients": ["着色剂（唇部敏感者需试色）"],
+    "comment_positive": [
+      "丝绒质地",
+      "不拔干",
+      "颜色饱和"
+    ],
+    "comment_negative": [
+      "沾杯",
+      "难卸",
+      "状态差时显唇纹"
+    ],
+    "ingredients": [
+      "聚二甲基硅氧烷",
+      "云母",
+      "二氧化硅",
+      "着色剂",
+      "成膜剂"
+    ],
+    "risk_ingredients": [
+      "着色剂（唇部敏感者需试色）"
+    ],
     "esg": {
       "score": 72,
       "gender": "品牌视觉表达多元，集团层面有包容性承诺。",
@@ -176,8 +331,16 @@
     "category": "眼霜",
     "image": "/pics/7.jpg",
     "variants": [
-      {"name": "30ml", "size": "30ml", "suitable": "适合初抗老"},
-      {"name": "15ml*2", "size": "30ml", "suitable": "性价比之选"}
+      {
+        "name": "30ml",
+        "size": "30ml",
+        "suitable": "适合初抗老"
+      },
+      {
+        "name": "15ml*2",
+        "size": "30ml",
+        "suitable": "性价比之选"
+      }
     ],
     "price_taobao": 279,
     "price_jd": 289,
@@ -185,10 +348,26 @@
     "coupon_info": "满259减15",
     "avg_rating": 4.7,
     "comment_summary": "用户认可淡纹、保湿和大容量性价比；差评集中在搓泥、辣眼睛和对深层纹路改善有限。",
-    "comment_positive": ["淡化细纹", "保湿不油", "性价比高"],
-    "comment_negative": ["搓泥", "辣眼睛", "深纹改善有限"],
-    "ingredients": ["玻色因", "透明质酸钠", "咖啡因", "甘油", "乙醇"],
-    "risk_ingredients": ["乙醇（眼周敏感者需谨慎）"],
+    "comment_positive": [
+      "淡化细纹",
+      "保湿不油",
+      "性价比高"
+    ],
+    "comment_negative": [
+      "搓泥",
+      "辣眼睛",
+      "深纹改善有限"
+    ],
+    "ingredients": [
+      "玻色因",
+      "透明质酸钠",
+      "咖啡因",
+      "甘油",
+      "乙醇"
+    ],
+    "risk_ingredients": [
+      "乙醇（眼周敏感者需谨慎）"
+    ],
     "esg": {
       "score": 75,
       "gender": "集团有女性赋权项目和多元人才目标。",
@@ -204,8 +383,16 @@
     "category": "眼影",
     "image": "/pics/8.jpeg",
     "variants": [
-      {"name": "JOJO橘金", "palette": "橘棕", "suitable": "适合暖皮"},
-      {"name": "SMOOTHIE干玫瑰", "palette": "粉棕", "suitable": "适合冷皮"}
+      {
+        "name": "JOJO橘金",
+        "palette": "橘棕",
+        "suitable": "适合暖皮"
+      },
+      {
+        "name": "SMOOTHIE干玫瑰",
+        "palette": "粉棕",
+        "suitable": "适合冷皮"
+      }
     ],
     "price_taobao": 230,
     "price_jd": 239,
@@ -213,10 +400,26 @@
     "coupon_info": "满199减10",
     "avg_rating": 4.8,
     "comment_summary": "好评集中在配色日常、粉质细腻和新手友好；差评主要是飞粉、持久度一般和亮片色利用率低。",
-    "comment_positive": ["粉质细腻", "颜色百搭", "显色适中"],
-    "comment_negative": ["飞粉", "持久一般", "亮片色利用率低"],
-    "ingredients": ["云母", "滑石粉", "二氧化钛", "氧化铁类", "合成氟金云母"],
-    "risk_ingredients": ["滑石粉（粉尘吸入需避免）"],
+    "comment_positive": [
+      "粉质细腻",
+      "颜色百搭",
+      "显色适中"
+    ],
+    "comment_negative": [
+      "飞粉",
+      "持久一般",
+      "亮片色利用率低"
+    ],
+    "ingredients": [
+      "云母",
+      "滑石粉",
+      "二氧化钛",
+      "氧化铁类",
+      "合成氟金云母"
+    ],
+    "risk_ingredients": [
+      "滑石粉（粉尘吸入需避免）"
+    ],
     "esg": {
       "score": 68,
       "gender": "品牌面向年轻女性表达清晰，但治理维度披露有限。",
@@ -232,8 +435,16 @@
     "category": "防晒",
     "image": "/pics/9.jpg",
     "variants": [
-      {"name": "经典款", "spf": "SPF50+", "suitable": "适合户外"},
-      {"name": "粉金瓶", "spf": "SPF50+", "suitable": "适合敏感肌"}
+      {
+        "name": "经典款",
+        "spf": "SPF50+",
+        "suitable": "适合户外"
+      },
+      {
+        "name": "粉金瓶",
+        "spf": "SPF50+",
+        "suitable": "适合敏感肌"
+      }
     ],
     "price_taobao": 248,
     "price_jd": 258,
@@ -241,10 +452,27 @@
     "coupon_info": "满228减10",
     "avg_rating": 4.7,
     "comment_summary": "户外防护、防水防汗和成膜速度是核心好评；差评集中在酒精味、拔干、卸除成本和部分防晒剂环境争议。",
-    "comment_positive": ["防晒强", "防水防汗", "户外适用"],
-    "comment_negative": ["酒精味", "拔干", "难卸"],
-    "ingredients": ["氧化锌", "甲氧基肉桂酸乙基己酯", "乙醇", "二氧化钛", "硅石"],
-    "risk_ingredients": ["乙醇", "部分化学防晒剂环境争议"],
+    "comment_positive": [
+      "防晒强",
+      "防水防汗",
+      "户外适用"
+    ],
+    "comment_negative": [
+      "酒精味",
+      "拔干",
+      "难卸"
+    ],
+    "ingredients": [
+      "氧化锌",
+      "甲氧基肉桂酸乙基己酯",
+      "乙醇",
+      "二氧化钛",
+      "硅石"
+    ],
+    "risk_ingredients": [
+      "乙醇",
+      "部分化学防晒剂环境争议"
+    ],
     "esg": {
       "score": 65,
       "gender": "品牌 ESG 叙事以集团报告为主，单品社会维度信息有限。",
@@ -260,8 +488,16 @@
     "category": "眼影",
     "image": "/pics/10.jpeg",
     "variants": [
-      {"name": "小狗盘", "theme": "柯基", "suitable": "适合可爱风"},
-      {"name": "小猫盘", "theme": "英短", "suitable": "适合日常"}
+      {
+        "name": "小狗盘",
+        "theme": "柯基",
+        "suitable": "适合可爱风"
+      },
+      {
+        "name": "小猫盘",
+        "theme": "英短",
+        "suitable": "适合日常"
+      }
     ],
     "price_taobao": 129,
     "price_jd": 139,
@@ -269,16 +505,370 @@
     "coupon_info": "满119减5",
     "avg_rating": 4.6,
     "comment_summary": "好评来自配色丰富、显色和价格亲民，适合入门尝试；差评集中在飞粉、持久度不足和外壳质感一般。",
-    "comment_positive": ["配色丰富", "显色度高", "便宜"],
-    "comment_negative": ["飞粉严重", "持久差", "包装质感一般"],
-    "ingredients": ["云母", "滑石粉", "着色剂", "矿油", "合成氟金云母"],
-    "risk_ingredients": ["滑石粉（粉尘吸入需避免）", "矿油（痘肌谨慎）"],
+    "comment_positive": [
+      "配色丰富",
+      "显色度高",
+      "便宜"
+    ],
+    "comment_negative": [
+      "飞粉严重",
+      "持久差",
+      "包装质感一般"
+    ],
+    "ingredients": [
+      "云母",
+      "滑石粉",
+      "着色剂",
+      "矿油",
+      "合成氟金云母"
+    ],
+    "risk_ingredients": [
+      "滑石粉（粉尘吸入需避免）",
+      "矿油（痘肌谨慎）"
+    ],
     "esg": {
       "score": 70,
       "gender": "年轻女性用户沟通强，治理披露和公益延展仍可加强。",
       "animal": "动物主题包装有公益传播潜力，纯素和动物测试信息需明确。",
       "environment": "塑料包装较多，替换装和回收设计不足。",
       "labor": "本土供应链效率高，但公开审计信息有限。"
+    }
+  },
+  {
+    "id": 11,
+    "name": "Fit Me 哑光粉底液",
+    "brand": "Maybelline",
+    "category": "粉底液",
+    "image": "./pics/11.svg",
+    "variants": [
+      {
+        "name": "112 Natural Ivory",
+        "shade": "自然白",
+        "suitable": "适合偏白肤色"
+      },
+      {
+        "name": "120 Classic Ivory",
+        "shade": "象牙色",
+        "suitable": "适合黄一白/中性调"
+      },
+      {
+        "name": "220 Natural Beige",
+        "shade": "自然米色",
+        "suitable": "适合自然肤色"
+      }
+    ],
+    "price_taobao": 99,
+    "price_jd": 109,
+    "price_douyin": 89,
+    "coupon_info": "满99减10",
+    "avg_rating": 4.5,
+    "comment_summary": "用户认可控油、柔焦毛孔和价格友好，适合油皮通勤；负面反馈集中在干皮拔干、色号氧化和遮瑕不如高端持妆粉底。",
+    "comment_positive": [
+      "控油性价比高",
+      "柔焦毛孔",
+      "自然哑光"
+    ],
+    "comment_negative": [
+      "干皮拔干",
+      "可能氧化",
+      "遮瑕中等"
+    ],
+    "ingredients": [
+      "水",
+      "环己硅氧烷",
+      "尼龙-12",
+      "异十二烷",
+      "二氧化钛",
+      "氧化铁类"
+    ],
+    "risk_ingredients": [
+      "硅油体系（闷痘肌需试用）"
+    ],
+    "esg": {
+      "score": 72,
+      "gender": "母公司有多元与包容公开承诺，单品维度披露有限。",
+      "animal": "动物测试政策受销售市场法规影响，需按地区核对。",
+      "environment": "平价开架包装轻量，补充装和回收信息有限。",
+      "labor": "供应链管理依托集团体系，单品追溯信息较少。"
+    }
+  },
+  {
+    "id": 12,
+    "name": "Infallible Fresh Wear 粉底液",
+    "brand": "L'Oréal Paris",
+    "category": "粉底液",
+    "image": "./pics/12.svg",
+    "variants": [
+      {
+        "name": "015 Porcelain",
+        "shade": "瓷白色",
+        "suitable": "适合白皙肤色"
+      },
+      {
+        "name": "120 Vanilla",
+        "shade": "自然白",
+        "suitable": "适合黄一白"
+      },
+      {
+        "name": "480 Radiant Sand",
+        "shade": "沙色",
+        "suitable": "适合自然暖调"
+      }
+    ],
+    "price_taobao": 169,
+    "price_jd": 189,
+    "price_douyin": 159,
+    "coupon_info": "满159减15",
+    "avg_rating": 4.6,
+    "comment_summary": "好评集中在轻薄、持妆和不易暗沉，适合想要日常长效底妆的人；差评多为酒精味、香精感和干皮卡纹。",
+    "comment_positive": [
+      "轻薄持妆",
+      "妆效自然",
+      "不易暗沉"
+    ],
+    "comment_negative": [
+      "酒精味明显",
+      "香精感",
+      "干皮可能卡纹"
+    ],
+    "ingredients": [
+      "水",
+      "聚二甲基硅氧烷",
+      "异十二烷",
+      "变性乙醇",
+      "二氧化钛",
+      "珍珠岩"
+    ],
+    "risk_ingredients": [
+      "变性乙醇",
+      "香精"
+    ],
+    "esg": {
+      "score": 76,
+      "gender": "集团层面有女性赋权和多元化项目披露。",
+      "animal": "推动替代测试，但部分市场仍受法规约束。",
+      "environment": "集团减碳路线清晰，彩妆单品包装减量信息一般。",
+      "labor": "全球供应链审计体系较完整。"
+    }
+  },
+  {
+    "id": 13,
+    "name": "Anthelios SPF50 防晒乳",
+    "brand": "La Roche-Posay",
+    "category": "防晒",
+    "image": "./pics/13.svg",
+    "variants": [
+      {
+        "name": "UV Control SPF50",
+        "spf": "SPF50",
+        "suitable": "适合痘肌/泛红肌"
+      },
+      {
+        "name": "UVMUNE 400 Invisible Fluid",
+        "spf": "SPF50+",
+        "suitable": "适合通勤轻薄防晒"
+      }
+    ],
+    "price_taobao": 229,
+    "price_jd": 249,
+    "price_douyin": 219,
+    "coupon_info": "满229减20",
+    "avg_rating": 4.7,
+    "comment_summary": "用户看重医研品牌背书、敏感肌友好和轻薄防晒；差评集中在价格偏高、部分版本搓泥和肤感因版本差异较大。",
+    "comment_positive": [
+      "敏感肌友好",
+      "轻薄防晒",
+      "医研背书"
+    ],
+    "comment_negative": [
+      "价格偏高",
+      "部分版本搓泥",
+      "肤感差异大"
+    ],
+    "ingredients": [
+      "水",
+      "二氧化钛",
+      "氧化锌",
+      "硅石",
+      "透明质酸钠",
+      "烟酰胺"
+    ],
+    "risk_ingredients": [
+      "防晒剂需足量涂抹",
+      "部分版本可能含酒精"
+    ],
+    "esg": {
+      "score": 77,
+      "gender": "集团有多元包容项目披露，品牌沟通以皮肤健康为主。",
+      "animal": "动物测试政策需按销售市场法规核对。",
+      "environment": "防晒剂环境影响需关注，品牌强调严格配方与安全测试。",
+      "labor": "供应链依托集团体系，公开报告较完整。"
+    }
+  },
+  {
+    "id": 14,
+    "name": "Eye Repair Cream 眼霜",
+    "brand": "CeraVe",
+    "category": "眼霜",
+    "image": "./pics/14.svg",
+    "variants": [
+      {
+        "name": "14ml 标准装",
+        "size": "14ml",
+        "suitable": "适合眼周干燥/屏障脆弱"
+      },
+      {
+        "name": "旅行装",
+        "size": "小样",
+        "suitable": "适合先试用"
+      }
+    ],
+    "price_taobao": 118,
+    "price_jd": 128,
+    "price_douyin": 109,
+    "coupon_info": "满109减10",
+    "avg_rating": 4.5,
+    "comment_summary": "好评来自温和、无香精、基础保湿和眼周屏障友好；差评是淡纹效果不强、肤感偏基础、对重度黑眼圈帮助有限。",
+    "comment_positive": [
+      "温和无香精",
+      "基础保湿",
+      "屏障友好"
+    ],
+    "comment_negative": [
+      "淡纹弱",
+      "肤感基础",
+      "黑眼圈改善有限"
+    ],
+    "ingredients": [
+      "神经酰胺",
+      "透明质酸",
+      "烟酰胺",
+      "甘油",
+      "植物鞘氨醇"
+    ],
+    "risk_ingredients": [
+      "烟酰胺（少数人不耐受）"
+    ],
+    "esg": {
+      "score": 73,
+      "gender": "品牌定位偏皮肤健康，社会维度单品披露有限。",
+      "animal": "动物测试政策需按市场核对。",
+      "environment": "包装简洁但补充装与回收信息有限。",
+      "labor": "供应链依托集团体系，单品追溯信息较少。"
+    }
+  },
+  {
+    "id": 15,
+    "name": "Ruby Woo 复古哑光唇膏",
+    "brand": "MAC",
+    "category": "唇釉",
+    "image": "./pics/15.svg",
+    "variants": [
+      {
+        "name": "Ruby Woo",
+        "color": "蓝调正红",
+        "finish": "Retro Matte",
+        "suitable": "适合复古红唇"
+      },
+      {
+        "name": "All Fired Up",
+        "color": "玫红",
+        "finish": "Retro Matte",
+        "suitable": "适合冷调妆容"
+      }
+    ],
+    "price_taobao": 210,
+    "price_jd": 220,
+    "price_douyin": 199,
+    "coupon_info": "满199减15",
+    "avg_rating": 4.7,
+    "comment_summary": "经典蓝调红和强哑光妆效辨识度高，适合路演中做“经典单品 vs 液体唇釉”对比；差评多为拔干、显唇纹和卸妆难。",
+    "comment_positive": [
+      "经典红色",
+      "显色强",
+      "持久哑光"
+    ],
+    "comment_negative": [
+      "偏干",
+      "显唇纹",
+      "卸妆难"
+    ],
+    "ingredients": [
+      "蓖麻籽油",
+      "地蜡",
+      "微晶蜡",
+      "云母",
+      "着色剂"
+    ],
+    "risk_ingredients": [
+      "着色剂（唇部敏感者需试用）",
+      "哑光蜡质体系偏干"
+    ],
+    "esg": {
+      "score": 74,
+      "gender": "品牌长期强调多元审美，公益项目有公开传播。",
+      "animal": "动物测试政策受地区法规影响。",
+      "environment": "Back-to-MAC 等回收项目曾具代表性，包装仍有减量空间。",
+      "labor": "供应链依托集团体系，公开报告较完整。"
+    }
+  },
+  {
+    "id": 16,
+    "name": "Ultimune 红腰子精华",
+    "brand": "SHISEIDO",
+    "category": "精华",
+    "image": "./pics/16.svg",
+    "variants": [
+      {
+        "name": "30ml 标准装",
+        "size": "30ml",
+        "suitable": "适合初次尝试"
+      },
+      {
+        "name": "50ml 正装",
+        "size": "50ml",
+        "suitable": "适合长期维稳"
+      },
+      {
+        "name": "50ml 替换装",
+        "size": "50ml refill",
+        "suitable": "适合复购减包装"
+      }
+    ],
+    "price_taobao": 780,
+    "price_jd": 820,
+    "price_douyin": 760,
+    "coupon_info": "满760减50",
+    "avg_rating": 4.8,
+    "comment_summary": "高端维稳肌底精华，用户关注肤感、维稳和换季状态；差评集中在价格高、功效不如强功效精华直观、香味存在感。",
+    "comment_positive": [
+      "维稳肤感好",
+      "换季友好",
+      "高端肌底护理"
+    ],
+    "comment_negative": [
+      "价格高",
+      "功效慢",
+      "有香味"
+    ],
+    "ingredients": [
+      "水",
+      "甘油",
+      "变性乙醇",
+      "丁二醇",
+      "灵芝提取物",
+      "鸢尾根提取物"
+    ],
+    "risk_ingredients": [
+      "变性乙醇",
+      "香精"
+    ],
+    "esg": {
+      "score": 79,
+      "gender": "集团有多元人才和女性发展披露。",
+      "animal": "动物测试政策受地区法规影响。",
+      "environment": "提供替换装选择，集团有可持续包装目标。",
+      "labor": "日本集团供应链管理成熟，公开报告较完整。"
     }
   }
 ]
