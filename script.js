@@ -380,13 +380,13 @@ document.addEventListener('DOMContentLoaded', () => {
         <p class="section-subtitle">从比价到成分，从口碑到价值观，EcoChic 将分散在多个平台的信息整合于一处</p>
         <div class="features-grid mt-3">
           <div class="feature-card" onclick="location.hash='#list'">
-            <div class="feature-icon sky icon-price"><span></span><b>¥</b></div>
+            <div class="feature-icon sky icon-price"><span></span><b></b><i></i></div>
             <div class="feature-title">多平台比价</div>
             <p class="feature-desc">一键对比淘宝、京东、抖音三平台实时价格，叠加优惠券最低价秒出。</p>
             <span class="feature-arrow">→</span>
           </div>
           <div class="feature-card" onclick="showAIDemo()">
-            <div class="feature-icon ai icon-ai"><span></span><b>AI</b><i></i></div>
+            <div class="feature-icon ai icon-ai"><span></span><b></b><i></i></div>
             <div class="feature-title">智能购买建议</div>
             <p class="feature-desc">把口碑、价格、成分和 ESG 放到同一个建议里，快速判断是否适合你。</p>
             <span class="feature-arrow">→</span>

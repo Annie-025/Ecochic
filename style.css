@@ -878,23 +878,46 @@ main { min-height: 100vh; }
 .feature-icon span,
 .feature-icon i { position: absolute; display: block; }
 .icon-price span {
-  width: 25px; height: 18px; border-radius: 6px;
-  background: rgba(255,255,255,0.72); border: 1px solid rgba(63,130,176,0.24);
-  transform: rotate(-12deg);
+  width: 28px; height: 20px; border-radius: 7px 7px 7px 3px;
+  background: rgba(255,255,255,0.78); border: 1px solid rgba(63,130,176,0.26);
+  transform: rotate(-14deg);
 }
 .icon-price span::after {
-  content: ''; position: absolute; width: 4px; height: 4px; border-radius: 50%;
-  right: 4px; top: 4px; background: var(--sky-dark);
+  content: ''; position: absolute; width: 5px; height: 5px; border-radius: 50%;
+  right: 5px; top: 5px; background: var(--sky-dark);
 }
-.icon-price b { color: var(--sky-dark); font-size: 1rem; transform: translate(-2px, 1px); }
+.icon-price b {
+  width: 15px; height: 2px; border-radius: 999px;
+  background: var(--sky-dark);
+  transform: translate(-4px, 2px) rotate(-14deg);
+  box-shadow: 0 5px 0 rgba(63,130,176,0.52);
+}
+.icon-price i {
+  width: 9px; height: 9px; border-radius: 50%;
+  border: 2px solid rgba(63,130,176,0.45);
+  transform: translate(12px, -8px);
+}
 .icon-ai span {
-  width: 27px; height: 22px; border-radius: 7px;
+  width: 26px; height: 24px; border-radius: 8px;
   border: 1px solid rgba(0,201,167,0.55); background: rgba(0,201,167,0.1);
 }
-.icon-ai b { color: var(--ai-teal); font-size: 0.72rem; letter-spacing: 0.04em; }
+.icon-ai span::before,
+.icon-ai span::after {
+  content: ''; position: absolute; left: 6px; right: 6px; height: 1px;
+  background: rgba(0,201,167,0.48);
+}
+.icon-ai span::before { top: 8px; }
+.icon-ai span::after { bottom: 8px; }
+.icon-ai b {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--ai-teal);
+  box-shadow: -8px 7px 0 rgba(0,201,167,0.55), 8px 7px 0 rgba(0,201,167,0.38);
+  transform: translateY(-3px);
+}
 .icon-ai i {
-  width: 5px; height: 5px; border-radius: 50%; right: 8px; top: 8px;
-  background: #fff; box-shadow: -18px 13px 0 rgba(255,255,255,0.55);
+  width: 32px; height: 2px; border-radius: 999px;
+  background: rgba(0,201,167,0.32);
+  transform: translateY(16px);
 }
 .icon-esg span {
   width: 26px; height: 26px; border: 2px solid rgba(61,155,128,0.44);
