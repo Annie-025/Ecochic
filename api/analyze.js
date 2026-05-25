@@ -20,18 +20,18 @@ const PROVIDERS = [
 
 function mockResponse(product) {
   const name = product?.name || "当前产品";
-  const positives = product?.comment_positive || ["口碑稳定", "信息完整", "适合演示"];
+  const positives = product?.comment_positive || ["口碑稳定", "信息完整", "适合日常决策"];
   const negatives = product?.comment_negative || ["需结合肤质", "需核对价格", "需关注成分"];
 
   return {
     mode: "mock",
     provider: "Mock",
-    title: `${name} AI 决策摘要`,
-    summary: `${name} 的 demo 摘要已生成。推荐关注 ${positives.slice(0, 2).join("、")}；下单前建议确认 ${negatives.slice(0, 2).join("、")}。`,
+    title: `${name} 智能购买建议`,
+    summary: `${name} 的综合建议已生成。推荐关注 ${positives.slice(0, 2).join("、")}；下单前建议确认 ${negatives.slice(0, 2).join("、")}。`,
     bullets: [
       `好评关键词：${positives.join("、")}`,
       `风险关键词：${negatives.join("、")}`,
-      "未检测到可用 AI API key，已自动回退到 mock 模式。",
+      "建议结合肤质、使用场景和当天价格再做最终选择。",
     ],
   };
 }

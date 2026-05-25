@@ -205,6 +205,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const featuredProduct = topProducts[0] || products[0];
     const fp = featuredProduct;
     const fpMin = fp ? minPrice(fp) : 0;
+    const recommendationCards = [
+      {
+        label: '高评分优先',
+        tag: '口碑最稳',
+        product: [...products].sort((a,b) => b.avg_rating - a.avg_rating)[0],
+        reason: '适合想减少踩雷、优先看综合口碑的人。',
+      },
+      {
+        label: 'ESG 高分',
+        tag: '价值观匹配',
+        product: [...products].sort((a,b) => (b.esg?.score || 0) - (a.esg?.score || 0))[0],
+        reason: '适合关注环保、动物福利和品牌责任的人。',
+      },
+      {
+        label: '低价优先',
+        tag: '预算友好',
+        product: [...products].sort((a,b) => minPrice(a) - minPrice(b))[0],
+        reason: '适合先控制预算，再比较功效和风险的人。',
+      },
+    ].filter(item => item.product);
+    const decisionCards = [
+      { icon:'¥', title:'预算优先', desc:'先看最低价、优惠和同类平替。', href:'#list' },
+      { icon:'敏', title:'敏感肌优先', desc:'优先避开酒精、香精和争议成分。', href:'#versions?compare=%E9%98%B2%E6%99%92' },
+      { icon:'成', title:'成分党优先', desc:'把功效成分、风险成分放在一起看。', href:'#list' },
+      { icon:'ESG', title:'价值观优先', desc:'按动物福利、环保与供应链表现筛选。', href:'#test' },
+    ];
+    const compareShortcuts = [
+      { category:'粉底液', desc:'平价控油 vs 高端持妆' },
+      { category:'防晒', desc:'敏感肌通勤 vs 户外防水' },
+      { category:'精华', desc:'焕肤、维稳与抗氧化' },
+    ];
 
     app.innerHTML = `
       <!-- ── HERO ── -->
@@ -227,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <div class="hero-stats fade-up fade-up-4">
               <div>
-                <div class="hero-stat-num">10+</div>
+                <div class="hero-stat-num">${products.length}+</div>
                 <div class="hero-stat-label">精选 SKU</div>
               </div>
               <div>
@@ -249,8 +280,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <!-- AI Panel -->
           <div class="hero-panel fade-up fade-up-3">
             <div class="hero-panel-header">
-              <span class="hero-panel-title">// AI 分析 · 实时运行</span>
-              <span class="status-chip"><span class="ai-dot-live" style="width:5px;height:5px;"></span> LIVE</span>
+              <span class="hero-panel-title">今日智能推荐</span>
+              <span class="status-chip"><span class="ai-dot-live" style="width:5px;height:5px;"></span> 已开启</span>
             </div>
             <div class="panel-brand">${fp.brand}</div>
             <div class="panel-product-name">${fp.name}</div>
@@ -304,8 +335,8 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <div class="feature-card" onclick="showAIDemo()">
             <div class="feature-icon ai">🤖</div>
-            <div class="feature-title">AI 评论总结</div>
-            <p class="feature-desc">大模型分析数千条评价，提炼好评 TOP3 与差评 TOP3，10 秒掌握核心口碑。</p>
+            <div class="feature-title">智能购买建议</div>
+            <p class="feature-desc">把口碑、价格、成分和 ESG 放到同一个建议里，快速判断是否适合你。</p>
             <span class="feature-arrow">→</span>
           </div>
           <div class="feature-card" onclick="location.hash='#test'">
@@ -335,46 +366,63 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
 
-      <!-- ── AI DEMO STRIP ── -->
+      <!-- ── APP DECISION MODULES ── -->
       <div class="section" style="padding-top:0;">
-        <div class="ai-module">
-          <div class="ai-module-header">
-            <div>
-              <div class="ai-module-title">
-                <span>🤖</span> AI 智能分析 · 演示
+        <div class="section-label">✦ 智能决策</div>
+        <div class="section-title">今天可以这样选</div>
+        <p class="section-subtitle">从预算、肤质、成分和价值观出发，直接进入最适合你的决策路径。</p>
+
+        <div class="mini-section-title mt-3">今日智能推荐</div>
+        <div class="home-recommend-grid mt-3">
+          ${recommendationCards.map(item => `
+            <a class="home-recommend-card" href="#detail?id=${item.product.id}">
+              <div class="home-recommend-top">
+                <span>${item.label}</span>
+                <strong>${item.tag}</strong>
               </div>
-              <div class="ai-module-subtitle">实际部署接入大模型 API（文心 / 通义 / DeepSeek）</div>
+              <div class="home-recommend-main">
+                <img src="${item.product.image}" alt="${item.product.brand} ${item.product.name}" loading="lazy">
+                <div>
+                  <div class="home-recommend-brand">${item.product.brand}</div>
+                  <div class="home-recommend-name">${item.product.name}</div>
+                  <div class="home-recommend-reason">${item.reason}</div>
+                </div>
+              </div>
+              <div class="home-recommend-meta">
+                <span>★ ${item.product.avg_rating}</span>
+                <span>ESG ${item.product.esg?.score || '-'}</span>
+                <span class="home-recommend-price">¥${minPrice(item.product)}</span>
+              </div>
+            </a>
+          `).join('')}
+        </div>
+
+        <div class="home-decision-layout mt-3">
+          <div>
+            <div class="mini-section-title">快速决策</div>
+            <div class="decision-grid">
+              ${decisionCards.map(card => `
+                <a class="decision-card" href="${card.href}">
+                  <span class="decision-icon">${card.icon}</span>
+                  <span>
+                    <strong>${card.title}</strong>
+                    <em>${card.desc}</em>
+                  </span>
+                </a>
+              `).join('')}
             </div>
-            <span class="demo-badge" onclick="showAIDemo()">▶ 运行演示</span>
           </div>
-          <div class="ai-thinking">
-            <span>正在分析消费者评论数据</span>
-            <span class="ai-thinking-dots"><span></span><span></span><span></span></span>
-          </div>
-          <div class="ai-summary-text">
-            「综合 3,248 条真实用户评价分析：当前美妆消费者首要痛点依次为 <strong style="color:var(--ai-teal)">评论可信度低 (58.5%)</strong>、<strong style="color:var(--ai-teal)">跨平台比价困难 (44.3%)</strong>、<strong style="color:var(--ai-teal)">担心假货 (41.5%)</strong>。基于此，AI 优先为您推荐评价真实度高、多平台有货、ESG 评级优秀的产品。」
-          </div>
-          <div class="ai-verdict-grid">
-            <div class="ai-verdict-card pos">
-              <div class="ai-verdict-label pos">📊 用户最关注维度</div>
-              <ul class="ai-verdict-list">
-                <li>成分安全 — 关注度 85.8%</li>
-                <li>定制推荐 — 偏好度 57.5%</li>
-                <li>AI 比价 — 需求度 50.9%</li>
-              </ul>
+          <div>
+            <div class="mini-section-title">热门对比</div>
+            <div class="compare-shortcut-grid">
+              ${compareShortcuts.map(item => `
+                <a class="compare-shortcut" href="#versions?compare=${encodeURIComponent(item.category)}">
+                  <strong>${item.category}</strong>
+                  <span>${item.desc}</span>
+                  <b>查看对比 →</b>
+                </a>
+              `).join('')}
             </div>
-            <div class="ai-verdict-card neg">
-              <div class="ai-verdict-label neg">⚡ AI 分析用户痛点</div>
-              <ul class="ai-verdict-list">
-                <li>评论真假难辨，广告过多</li>
-                <li>多平台比价耗时费力</li>
-                <li>ESG 信息分散难查找</li>
-              </ul>
-            </div>
-          </div>
-          <div class="ai-insight-row">
-            <span class="ai-insight-icon">💡</span>
-            <span class="ai-insight-text">AI 预测：<strong>「价值观驱动型消费」</strong>在 Z 世代中占比将于 2027 年超越 30%，EcoChic ESG 标签功能契合这一增长趋势</span>
           </div>
         </div>
       </div>
@@ -411,7 +459,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="section">
         <div class="section-label">✦ 全部产品</div>
         <div class="section-title">${sectionTitle}</div>
-        <p class="section-subtitle">搜索、筛选、排序合在同一处，适合路演时快速演示「从问题到决策」的完整链路。</p>
+        <p class="section-subtitle">搜索、筛选、排序合在同一处，从关键词到候选清单更顺手。</p>
 
         <div class="list-search-panel mt-3">
           <input id="list-search" type="search" placeholder="搜索产品、品牌、成分、评论关键词" value="${escapeAttr(searchQuery)}">
@@ -546,7 +594,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="price-platform-price">¥${pl.price}</div>
                 ${bestPlatform===pl.key ? `<div><span class="price-best-badge">最低价</span></div>` : ''}
                 ${p.coupon_info ? `<div><span class="price-coupon">🎫 ${p.coupon_info}</span></div>` : ''}
-                <button class="price-buy-btn" onclick="alert('演示模式：正在跳转到${pl.label}')">去购买</button>
+                <button class="price-buy-btn" onclick="alert('正在为你打开${pl.label}购买页')">去购买</button>
               </div>
             `).join('')}
           </div>
@@ -556,11 +604,11 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="ai-module">
           <div class="ai-module-header">
             <div>
-              <div class="ai-module-title">🤖 AI 评论智能总结</div>
-              <div class="ai-module-subtitle">大模型实时分析 · 提炼核心口碑 · 演示模式</div>
+              <div class="ai-module-title">🤖 智能购买建议</div>
+              <div class="ai-module-subtitle">基于口碑、成分与价格生成建议</div>
             </div>
             <span class="demo-badge" onclick="showProductAI(${p.id})">
-              ⚡ 演示模式
+              生成智能建议
             </span>
           </div>
           <div class="ai-thinking">
@@ -628,7 +676,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="ai-module-title">🔬 AI 成分安全分析</div>
               <div class="ai-module-subtitle">逐项成分解析 · 风险标注 · 肌肤适配建议</div>
             </div>
-            <span class="demo-badge">AI 检测</span>
+        <span class="demo-badge">成分已分析</span>
           </div>
           <div style="margin-bottom:1rem;">
             <div style="font-size:0.72rem;color:rgba(255,255,255,0.4);letter-spacing:0.1em;text-transform:uppercase;font-family:var(--font-mono);margin-bottom:0.75rem;">主要成分</div>
@@ -905,7 +953,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   /* ══════════════════════════════════════════════════════
-     AI DEMO MODAL
+     SMART ADVICE MODAL
   ══════════════════════════════════════════════════════ */
   async function showAIModal(product = null) {
     const modal = document.getElementById('ai-modal');
@@ -913,14 +961,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('modal-title').innerHTML = `
       <span style="display:inline-flex;align-items:center;gap:0.5rem;">
         <span style="width:8px;height:8px;background:var(--ai-teal);border-radius:50%;animation:live-pulse 1.8s infinite;"></span>
-        AI 分析引擎
+        EcoChic 智能建议
       </span>`;
     body.innerHTML = `
       <p style="color:var(--slate);font-size:0.9rem;line-height:1.7;margin-bottom:1rem;">
-        正在连接 AI 分析模块。如果没有本地 API key，会自动切换为 mock 演示模式。
+        正在整理口碑、成分、价格和价值观信息，为你生成更好判断的购买建议。
       </p>
       <div class="ai-thinking" style="background:var(--ai-bg);border-radius:var(--r-md);">
-        <span>EcoChic AI 正在生成摘要</span>
+        <span>EcoChic 正在生成建议</span>
         <span class="ai-thinking-dots"><span></span><span></span><span></span></span>
       </div>
     `;
@@ -934,26 +982,43 @@ document.addEventListener('DOMContentLoaded', () => {
       product: target,
     });
 
+    const technicalPattern = /API|key|Mock|mock|接口|DeepSeek|Gemini|Qwen|DASHSCOPE|GitHub|Pages|serverless|后端|402/i;
+    const cleanResultBullets = (result.bullets || []).filter(item => !technicalPattern.test(item));
+    const positiveBullets = [
+      ...cleanResultBullets.filter(item => /好评|推荐|优势|适合|信号/.test(item)),
+      ...(target?.comment_positive || []).map(item => `用户反馈：${item}`),
+    ].slice(0, 3);
+    const reminderBullets = [
+      ...cleanResultBullets.filter(item => /风险|提醒|谨慎|复核|建议/.test(item)),
+      ...(target?.comment_negative || []).map(item => `购买前留意：${item}`),
+      ...(target?.risk_ingredients || []).filter(item => item !== '无').map(item => `成分提醒：${item}`),
+    ].slice(0, 3);
+    const safePositives = positiveBullets.length ? positiveBullets : ['综合评分和用户反馈较稳定，适合进入候选清单。'];
+    const safeReminders = reminderBullets.length ? reminderBullets : ['建议结合肤质、使用场景和当天价格做最终选择。'];
+
     body.innerHTML = `
-      <p style="color:var(--slate);font-size:0.9rem;line-height:1.7;margin-bottom:1rem;">
-        当前模式：<strong>${result.provider || 'Mock'}</strong> · ${result.mode === 'live' ? '真实 API 返回' : '本地 mock 回退'}
-      </p>
-      <div style="background:var(--ai-bg);border-radius:var(--r-md);padding:1rem;margin-bottom:1rem;">
-        <div style="font-size:0.72rem;color:rgba(255,255,255,0.4);font-family:var(--font-mono);letter-spacing:0.1em;margin-bottom:0.5rem;">// ${result.title || 'AI 摘要'}</div>
-        <div style="font-size:0.85rem;color:rgba(255,255,255,0.78);line-height:1.7;">${result.summary}</div>
+      <div class="ai-advice-panel">
+        <div class="ai-advice-label">购买建议</div>
+        <div class="ai-advice-title">${result.title || `${target?.name || '当前产品'} 智能购买建议`}</div>
+        <div class="ai-advice-summary">${result.summary || `${target?.name || '这款产品'}整体口碑稳定，建议结合价格、肤质和成分偏好判断是否适合。`}</div>
       </div>
-      <ul style="font-size:0.82rem;color:var(--slate);line-height:1.8;padding-left:1.2rem;margin-bottom:1rem;">
-        ${(result.bullets || []).map(item => `<li>${item}</li>`).join('')}
-      </ul>
-      <div style="background:var(--ai-bg);border-radius:var(--r-md);padding:1rem;margin-bottom:1rem;">
-        <div style="font-size:0.72rem;color:rgba(255,255,255,0.4);font-family:var(--font-mono);letter-spacing:0.1em;margin-bottom:0.5rem;">// 实际部署调用示例</div>
-        <pre style="font-size:0.75rem;color:rgba(255,255,255,0.7);font-family:var(--font-mono);overflow-x:auto;line-height:1.6;">fetch("./api/analyze", {
-  method: "POST",
-  body: JSON.stringify({ product })
-})</pre>
+      <div class="ai-verdict-grid" style="margin-bottom:1rem;">
+        <div class="ai-verdict-card pos">
+          <div class="ai-verdict-label pos">推荐理由</div>
+          <ul class="ai-verdict-list">
+            ${safePositives.map(item => `<li>${item}</li>`).join('')}
+          </ul>
+        </div>
+        <div class="ai-verdict-card neg">
+          <div class="ai-verdict-label neg">购买前提醒</div>
+          <ul class="ai-verdict-list">
+            ${safeReminders.map(item => `<li>${item}</li>`).join('')}
+          </ul>
+        </div>
       </div>
-      <div style="font-size:0.82rem;color:var(--slate);">
-        📌 默认优先 Gemini API；GitHub Pages 环境没有后端时会保持静态 mock 展示。
+      <div class="ai-insight-row">
+        <span class="ai-insight-icon">💡</span>
+        <span class="ai-insight-text">建议先加入候选清单，再与同品类产品对比价格带、肤感和风险提示。</span>
       </div>
     `;
   }

@@ -9,12 +9,12 @@
     return {
       mode: "mock",
       provider: "Mock",
-      title: `${productName} AI 决策摘要`,
-      summary: `当前为本地 mock 模式：${productName} 的综合口碑较清晰，可重点关注 ${positives.slice(0, 2).join("、")}；购买前建议复核 ${negatives.slice(0, 2).join("、")}。`,
+      title: `${productName} 智能购买建议`,
+      summary: `${productName} 的综合口碑较清晰，可重点关注 ${positives.slice(0, 2).join("、")}；购买前建议复核 ${negatives.slice(0, 2).join("、")}。`,
       bullets: [
         `好评信号：${positives.join("、")}`,
         `风险提示：${negatives.join("、")}`,
-        "真实 API 调用需要通过本地后端或 Vercel Serverless 函数注入 API key。",
+        "建议结合肤质、使用场景和当天价格再做最终选择。",
       ],
     };
   }
