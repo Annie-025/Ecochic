@@ -1409,6 +1409,35 @@ main { min-height: 100vh; }
 }
 .modal-close:hover { color: var(--charcoal); }
 .modal-content h3 { font-size: 1.1rem; margin-bottom: 1rem; }
+.modal-content .ai-verdict-card {
+  background: var(--ivory);
+  border-color: var(--border);
+}
+.modal-content .ai-verdict-card.pos {
+  background: rgba(184,228,208,0.22);
+  border-color: rgba(97,154,129,0.22);
+}
+.modal-content .ai-verdict-card.neg {
+  background: rgba(240,221,232,0.25);
+  border-color: rgba(194,82,122,0.2);
+}
+.modal-content .ai-verdict-label {
+  font-family: var(--font-sans);
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+.modal-content .ai-verdict-list li {
+  color: var(--graphite);
+}
+.modal-content .ai-insight-row {
+  background: var(--mint-light);
+  border-color: var(--mint);
+}
+.modal-content .ai-insight-text {
+  color: var(--graphite);
+}
 
 /* ─────────────────────────────────────────── EMPTY STATE ──── */
 .empty-state {
