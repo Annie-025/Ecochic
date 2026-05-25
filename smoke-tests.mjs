@@ -70,6 +70,9 @@ assert.match(script, /version-swatch-card/, "version detail should render swatch
 assert.match(script, /swatchForVersion/, "version detail should map versions to swatch colors");
 assert.match(script, /icon-price/, "home feature icons should use refined CSS icon markup");
 assert.doesNotMatch(script, /feature-icon[^<]*>[^<]*(¥|AI|ESG|INCI)/, "home icons should not render bare text labels");
+assert.match(script, /product-compare-btn/, "product cards should expose compare button");
+assert.match(script, /stopPropagation\(\); location\.hash='#versions\?compare=/, "compare button should navigate without opening product detail");
+assert.match(css, /product-compare-btn/, "compare button should have dedicated styling");
 assert.equal(vercel.rewrites?.[0]?.source, "/api/analyze", "Vercel should route API requests");
 assert.equal(vercel.rewrites?.[0]?.destination, "/api/analyze.js", "Vercel should route to serverless function");
 assert.equal(packageJson.scripts.dev, "node local-server.js", "package should expose dev script for API demo");

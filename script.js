@@ -577,6 +577,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <span class="rating-num">${p.avg_rating}</span>
           </div>
           <div class="product-comment-preview">${p.comment_summary || ''}</div>
+          <button class="product-compare-btn" type="button" onclick="event.stopPropagation(); location.hash='#versions?compare=${encodeURIComponent(p.category)}'">
+            <span></span>对比同类
+          </button>
         </div>
       </div>
     `;
