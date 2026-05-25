@@ -328,25 +328,25 @@ document.addEventListener('DOMContentLoaded', () => {
         <p class="section-subtitle">从比价到成分，从口碑到价值观，EcoChic 将分散在多个平台的信息整合于一处</p>
         <div class="features-grid mt-3">
           <div class="feature-card" onclick="location.hash='#list'">
-            <div class="feature-icon sky">💰</div>
+            <div class="feature-icon sky">¥</div>
             <div class="feature-title">多平台比价</div>
             <p class="feature-desc">一键对比淘宝、京东、抖音三平台实时价格，叠加优惠券最低价秒出。</p>
             <span class="feature-arrow">→</span>
           </div>
           <div class="feature-card" onclick="showAIDemo()">
-            <div class="feature-icon ai">🤖</div>
+            <div class="feature-icon ai">AI</div>
             <div class="feature-title">智能购买建议</div>
             <p class="feature-desc">把口碑、价格、成分和 ESG 放到同一个建议里，快速判断是否适合你。</p>
             <span class="feature-arrow">→</span>
           </div>
           <div class="feature-card" onclick="location.hash='#test'">
-            <div class="feature-icon mint">🌿</div>
+            <div class="feature-icon mint">ESG</div>
             <div class="feature-title">ESG 价值观对齐</div>
             <p class="feature-desc">根据你的价值观偏好，高亮品牌在动物福利、环保、平等维度的真实表现。</p>
             <span class="feature-arrow">→</span>
           </div>
           <div class="feature-card" onclick="location.hash='#list'">
-            <div class="feature-icon blush">🔬</div>
+            <div class="feature-icon blush">INCI</div>
             <div class="feature-title">成分安全分析</div>
             <p class="feature-desc">逐项解析成分表，标注风险成分并给出安全等级，敏感肌友好指引。</p>
             <span class="feature-arrow">→</span>
@@ -511,8 +511,8 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="product-card" onclick="location.hash='#detail?id=${p.id}'">
         <div class="product-img-wrap">
           <img src="${p.image}" alt="${p.name}">
-          ${p.esg?.score >= 80 ? `<div class="product-esg-badge">🌿 ESG ${p.esg.score}</div>` : ''}
-          <div class="product-ai-icon">🤖</div>
+          ${p.esg?.score >= 80 ? `<div class="product-esg-badge">ESG ${p.esg.score}</div>` : ''}
+          <div class="product-ai-icon">AI</div>
         </div>
         <div class="product-body">
           <div class="product-brand">${p.brand}</div>
