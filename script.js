@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const PRODUCT_IMAGE_EXT = {
     1: 'jpeg', 2: 'png', 3: 'jpg', 4: 'jpeg', 5: 'png',
     6: 'jpeg', 7: 'jpg', 8: 'jpeg', 9: 'jpg', 10: 'jpeg',
-    11: 'svg', 12: 'svg', 13: 'svg', 14: 'svg', 15: 'svg', 16: 'svg'
+    11: 'jpeg', 12: 'jpeg', 13: 'jpg', 14: 'jpg', 15: 'jpeg', 16: 'jpeg'
   };
 
   function normalizeImagePath(path) {
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="hero-grid">
           <div>
             <div class="hero-eyebrow fade-up fade-up-1">
-              ✦ &nbsp;中大学生团队荣誉出品 · EcoChic
+              ✦ &nbsp;Ecochic团队荣誉出品
             </div>
             <h1 class="fade-up fade-up-2">
               美妆决策，<br><em>一分钟</em>做到极致
@@ -512,7 +512,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="product-img-wrap">
           <img src="${p.image}" alt="${p.name}">
           ${p.esg?.score >= 80 ? `<div class="product-esg-badge">ESG ${p.esg.score}</div>` : ''}
-          <div class="product-ai-icon">AI</div>
         </div>
         <div class="product-body">
           <div class="product-brand">${p.brand}</div>

@@ -215,7 +215,7 @@ main { min-height: 100vh; }
   border: 1px solid rgba(61,155,128,0.3);
   border-radius: var(--r-pill);
   font-size: 0.75rem; font-weight: 600;
-  color: var(--mint-dark); letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--mint-dark); letter-spacing: 0.08em;
   margin-bottom: 1.5rem;
 }
 .hero h1 {
@@ -948,14 +948,6 @@ main { min-height: 100vh; }
   border-radius: var(--r-pill); font-size: 0.68rem; font-weight: 600;
   color: var(--mint-dark); backdrop-filter: blur(8px);
 }
-.product-ai-icon {
-  position: absolute; top: 0.7rem; right: 0.7rem;
-  width: 30px; height: 30px; border-radius: 50%;
-  background: var(--ai-bg); border: 1px solid var(--ai-border);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.7rem;
-}
-
 .product-body { padding: 1.1rem; flex: 1; display: flex; flex-direction: column; }
 .product-brand { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dust); margin-bottom: 0.3rem; }
 .product-name { font-size: 0.95rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.6rem; line-height: 1.4; }
@@ -1673,16 +1665,6 @@ main { min-height: 100vh; }
     letter-spacing: 0.02em;
     background: rgba(255,255,255,0.88);
     border: 1px solid rgba(97,154,129,0.16);
-  }
-  .product-ai-icon {
-    top: 0.48rem;
-    right: 0.48rem;
-    width: 26px;
-    height: 26px;
-    border-radius: 10px;
-    font-size: 0.58rem;
-    font-weight: 800;
-    letter-spacing: 0.03em;
   }
   .product-body {
     padding: 0.82rem;

@@ -539,7 +539,7 @@
     "name": "Fit Me 哑光粉底液",
     "brand": "Maybelline",
     "category": "粉底液",
-    "image": "./pics/11.svg",
+    "image": "./pics/11.jpeg",
     "variants": [
       {
         "name": "112 Natural Ivory",
@@ -597,7 +597,7 @@
     "name": "Infallible Fresh Wear 粉底液",
     "brand": "L'Oréal Paris",
     "category": "粉底液",
-    "image": "./pics/12.svg",
+    "image": "./pics/12.jpeg",
     "variants": [
       {
         "name": "015 Porcelain",
@@ -656,7 +656,7 @@
     "name": "Anthelios SPF50 防晒乳",
     "brand": "La Roche-Posay",
     "category": "防晒",
-    "image": "./pics/13.svg",
+    "image": "./pics/13.jpg",
     "variants": [
       {
         "name": "UV Control SPF50",
@@ -710,7 +710,7 @@
     "name": "Eye Repair Cream 眼霜",
     "brand": "CeraVe",
     "category": "眼霜",
-    "image": "./pics/14.svg",
+    "image": "./pics/14.jpg",
     "variants": [
       {
         "name": "14ml 标准装",
@@ -762,7 +762,7 @@
     "name": "Ruby Woo 复古哑光唇膏",
     "brand": "MAC",
     "category": "唇釉",
-    "image": "./pics/15.svg",
+    "image": "./pics/15.jpeg",
     "variants": [
       {
         "name": "Ruby Woo",
@@ -817,7 +817,7 @@
     "name": "Ultimune 红腰子精华",
     "brand": "SHISEIDO",
     "category": "精华",
-    "image": "./pics/16.svg",
+    "image": "./pics/16.jpeg",
     "variants": [
       {
         "name": "30ml 标准装",

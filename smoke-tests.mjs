@@ -84,7 +84,7 @@ for (const versionProduct of versions) {
 for (const id of [11, 12, 13, 14, 15, 16]) {
   const product = products.find((item) => item.id === id);
   assert.ok(product, `new product ${id} should exist`);
-  assert.match(product.image || "", /^\.\/pics\/\d+\.svg$/, `new product ${id} should use local SVG visual`);
+  assert.match(product.image || "", /^\.\/pics\/\d+\.(jpe?g|png)$/i, `new product ${id} should use local product photo`);
 }
 
 console.log("Smoke tests passed");
