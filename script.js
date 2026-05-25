@@ -278,10 +278,10 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     ].filter(item => item.product);
     const decisionCards = [
-      { icon:'¥', title:'预算优先', desc:'先看最低价、优惠和同类平替。', href:'#list' },
-      { icon:'敏', title:'敏感肌优先', desc:'优先避开酒精、香精和争议成分。', href:'#versions?compare=%E9%98%B2%E6%99%92' },
-      { icon:'成', title:'成分党优先', desc:'把功效成分、风险成分放在一起看。', href:'#list' },
-      { icon:'ESG', title:'价值观优先', desc:'按动物福利、环保与供应链表现筛选。', href:'#test' },
+      { type:'budget', title:'预算优先', desc:'先看最低价、优惠和同类平替。', href:'#list' },
+      { type:'sensitive', title:'敏感肌优先', desc:'优先避开酒精、香精和争议成分。', href:'#versions?compare=%E9%98%B2%E6%99%92' },
+      { type:'ingredient', title:'成分党优先', desc:'把功效成分、风险成分放在一起看。', href:'#list' },
+      { type:'values', title:'价值观优先', desc:'按动物福利、环保与供应链表现筛选。', href:'#test' },
     ];
     const compareShortcuts = [
       { category:'粉底液', desc:'平价控油 vs 高端持妆' },
@@ -455,7 +455,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="decision-grid">
               ${decisionCards.map(card => `
                 <a class="decision-card" href="${card.href}">
-                  <span class="decision-icon">${card.icon}</span>
+                  <span class="decision-icon decision-icon-${card.type}"><i></i><b></b><em></em></span>
                   <span>
                     <strong>${card.title}</strong>
                     <em>${card.desc}</em>

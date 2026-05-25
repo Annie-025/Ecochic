@@ -62,6 +62,9 @@ assert.doesNotMatch(index + script, /AI 智能分析 · 演示|运行演示/, "h
 assert.match(script, /今日智能推荐/, "home should include app-style smart recommendations");
 assert.match(script, /快速决策/, "home should include quick decision cards");
 assert.match(script, /热门对比/, "home should include comparison shortcuts");
+assert.match(script, /decision-icon-\$\{card\.type\}/, "quick decision icons should use graphical CSS classes");
+assert.match(css, /decision-icon-budget/, "quick decision icon CSS should include budget icon");
+assert.doesNotMatch(script, /decision-icon">\$\{card\.icon\}|icon:'(?:¥|敏|成|ESG)'/, "quick decision icons should not render bare text labels");
 assert.match(script, /version-detail-hero/, "version detail should include product visual hero");
 assert.match(script, /version-swatch-card/, "version detail should render swatch cards");
 assert.match(script, /swatchForVersion/, "version detail should map versions to swatch colors");

@@ -1064,10 +1064,112 @@ main { min-height: 100vh; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
   background: var(--sky-light);
   color: var(--sky-dark);
-  font-size: 0.8rem;
-  font-weight: 800;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.62);
+}
+.decision-icon i,
+.decision-icon b,
+.decision-icon em {
+  position: absolute;
+  display: block;
+  font-style: normal;
+}
+.decision-icon-budget {
+  background: linear-gradient(135deg, rgba(168,212,245,0.45), rgba(255,255,255,0.9));
+}
+.decision-icon-budget i {
+  width: 25px;
+  height: 18px;
+  border-radius: 7px;
+  background: rgba(255,255,255,0.82);
+  border: 1px solid rgba(41,128,196,0.25);
+  transform: rotate(-11deg);
+}
+.decision-icon-budget b {
+  width: 14px;
+  height: 2px;
+  border-radius: 99px;
+  background: var(--sky-dark);
+  transform: translate(-3px, 1px) rotate(-11deg);
+  box-shadow: 0 5px 0 rgba(41,128,196,0.48);
+}
+.decision-icon-budget em {
+  width: 5px;
+  height: 5px;
+  right: 11px;
+  top: 12px;
+  border-radius: 50%;
+  background: var(--sky-dark);
+}
+.decision-icon-sensitive {
+  background: linear-gradient(135deg, rgba(240,221,232,0.58), rgba(255,255,255,0.92));
+}
+.decision-icon-sensitive i {
+  width: 18px;
+  height: 25px;
+  border-radius: 18px 18px 18px 3px;
+  background: linear-gradient(160deg, #f3c1d1, #fff);
+  border: 1px solid rgba(194,82,122,0.22);
+  transform: rotate(35deg);
+}
+.decision-icon-sensitive b {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(194,82,122,0.42);
+  border-radius: 50%;
+}
+.decision-icon-sensitive em {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c2527a;
+  transform: translate(8px, 8px);
+}
+.decision-icon-ingredient {
+  background: linear-gradient(135deg, rgba(184,228,208,0.5), rgba(255,255,255,0.92));
+}
+.decision-icon-ingredient i {
+  width: 26px;
+  height: 2px;
+  border-radius: 99px;
+  background: rgba(61,155,128,0.42);
+  transform: rotate(-32deg);
+}
+.decision-icon-ingredient b,
+.decision-icon-ingredient em {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--mint-dark);
+  box-shadow: 15px 9px 0 rgba(61,155,128,0.35);
+}
+.decision-icon-ingredient b { transform: translate(-9px, -7px); }
+.decision-icon-ingredient em { transform: translate(5px, 8px); background: #8fcfb5; }
+.decision-icon-values {
+  background: linear-gradient(135deg, rgba(184,228,208,0.42), rgba(168,212,245,0.34));
+}
+.decision-icon-values i {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  border: 2px solid rgba(61,155,128,0.42);
+}
+.decision-icon-values b {
+  width: 17px;
+  height: 24px;
+  border-radius: 18px 2px 18px 2px;
+  background: linear-gradient(135deg, #5fb48e, #b8e4d0);
+  transform: rotate(42deg) translate(-1px, 0);
+}
+.decision-icon-values em {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sky-dark);
+  transform: translate(12px, -10px);
 }
 .decision-card strong,
 .decision-card em {
