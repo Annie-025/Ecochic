@@ -62,6 +62,11 @@ assert.doesNotMatch(index + script, /AI 智能分析 · 演示|运行演示/, "h
 assert.match(script, /今日智能推荐/, "home should include app-style smart recommendations");
 assert.match(script, /快速决策/, "home should include quick decision cards");
 assert.match(script, /热门对比/, "home should include comparison shortcuts");
+assert.match(script, /version-detail-hero/, "version detail should include product visual hero");
+assert.match(script, /version-swatch-card/, "version detail should render swatch cards");
+assert.match(script, /swatchForVersion/, "version detail should map versions to swatch colors");
+assert.match(script, /icon-price/, "home feature icons should use refined CSS icon markup");
+assert.doesNotMatch(script, /feature-icon sky">¥|feature-icon ai">AI|feature-icon mint">ESG|feature-icon blush">INCI/, "home icons should not be bare text labels");
 assert.equal(vercel.rewrites?.[0]?.source, "/api/analyze", "Vercel should route API requests");
 assert.equal(vercel.rewrites?.[0]?.destination, "/api/analyze.js", "Vercel should route to serverless function");
 assert.equal(packageJson.scripts.dev, "node local-server.js", "package should expose dev script for API demo");

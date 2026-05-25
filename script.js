@@ -73,6 +73,58 @@ document.addEventListener('DOMContentLoaded', () => {
     `).join('');
   }
 
+  const SWATCH_COLORS = {
+    '1C': ['#f2d3bd', '#f7e1cf'],
+    '1W1': ['#efd0aa', '#f6dfc3'],
+    '1W2': ['#d9aa78', '#efd0aa'],
+    '2C2': ['#d7a487', '#e7c4ab'],
+    '3W2': ['#a8794c', '#c89662'],
+    '196': ['#a63a2b', '#d05a3d'],
+    '277': ['#b87577', '#d59a97'],
+    '888': ['#d96735', '#f19861'],
+    '507': ['#a96170', '#d38a96'],
+    mild: ['#c98f9b', '#e4b5bd'],
+    aroused: ['#a92655', '#d64d78'],
+    deep: ['#651f34', '#9a3450'],
+    forbidden: ['#7f1838', '#b52f57'],
+    overtake: ['#c8733a', '#e5a06b'],
+    speak: ['#9a6a68', '#c89791'],
+    anyhow: ['#7b7670', '#aaa29a'],
+    gloro: ['#b18443', '#e2c06a'],
+    wx01: ['#8d6443', '#c6a37d'],
+    wx02: ['#bd7d83', '#e4b1b4'],
+    wx03: ['#8aa6d8', '#c4b5e6'],
+    wx04: ['#7d3528', '#b85d45'],
+    '112': ['#eac8aa', '#f7ddc6'],
+    '120': ['#dfb789', '#f1d1a8'],
+    '220': ['#c99263', '#e0b483'],
+    '015': ['#f0d5c0', '#f8e5d6'],
+    '420': ['#d3a070', '#e8c198'],
+    '425': ['#b98054', '#d0a06e'],
+    rubywoo: ['#9f071f', '#df1234'],
+    allfired: ['#c41852', '#f05a82'],
+    chili: ['#a64025', '#d0633a'],
+  };
+
+  function swatchForVersion(version = {}, category = '') {
+    const id = String(version.version_id || '').toLowerCase();
+    const exact = SWATCH_COLORS[version.version_id] || SWATCH_COLORS[id];
+    if (exact) return `linear-gradient(135deg, ${exact[0]}, ${exact[1]})`;
+
+    const text = `${version.name || ''} ${version.color || ''}`.toLowerCase();
+    if (/红|ruby|chili|莓|酒/.test(text)) return 'linear-gradient(135deg, #8f1d35, #d84a63)';
+    if (/粉|玫瑰|豆沙/.test(text)) return 'linear-gradient(135deg, #b66c7b, #e0a8b3)';
+    if (/橘|暖|枫叶/.test(text)) return 'linear-gradient(135deg, #bd6233, #ec9d62)';
+    if (/棕|大地|沙|小麦|自然/.test(text)) return 'linear-gradient(135deg, #9d704a, #d2a679)';
+    if (/白|象牙|瓷/.test(text)) return 'linear-gradient(135deg, #efd5bd, #fbebdc)';
+    if (/蓝|偏光/.test(text)) return 'linear-gradient(135deg, #8aa6d8, #c8b6e8)';
+    if (/金|香槟/.test(text)) return 'linear-gradient(135deg, #ad843b, #e4c76d)';
+    if (/眼霜|乳霜|cream|防晒|spf|精华|serum|红色瓶身/.test(text) || !/粉底|口红|唇釉|眼影/.test(category)) {
+      return 'linear-gradient(135deg, #f8f5ef, #dfeee9 50%, #b8d6ef)';
+    }
+    return 'linear-gradient(135deg, #d8c5b4, #f3e8db)';
+  }
+
   function compareSummary(category, rows) {
     if (rows.length < 2) return `${category} 当前暂无足够竞品样本，可先浏览产品详情。`;
 
@@ -328,25 +380,25 @@ document.addEventListener('DOMContentLoaded', () => {
         <p class="section-subtitle">从比价到成分，从口碑到价值观，EcoChic 将分散在多个平台的信息整合于一处</p>
         <div class="features-grid mt-3">
           <div class="feature-card" onclick="location.hash='#list'">
-            <div class="feature-icon sky">¥</div>
+            <div class="feature-icon sky icon-price"><span></span><b>¥</b></div>
             <div class="feature-title">多平台比价</div>
             <p class="feature-desc">一键对比淘宝、京东、抖音三平台实时价格，叠加优惠券最低价秒出。</p>
             <span class="feature-arrow">→</span>
           </div>
           <div class="feature-card" onclick="showAIDemo()">
-            <div class="feature-icon ai">AI</div>
+            <div class="feature-icon ai icon-ai"><span></span><b>AI</b><i></i></div>
             <div class="feature-title">智能购买建议</div>
             <p class="feature-desc">把口碑、价格、成分和 ESG 放到同一个建议里，快速判断是否适合你。</p>
             <span class="feature-arrow">→</span>
           </div>
           <div class="feature-card" onclick="location.hash='#test'">
-            <div class="feature-icon mint">ESG</div>
+            <div class="feature-icon mint icon-esg"><span></span><b></b></div>
             <div class="feature-title">ESG 价值观对齐</div>
             <p class="feature-desc">根据你的价值观偏好，高亮品牌在动物福利、环保、平等维度的真实表现。</p>
             <span class="feature-arrow">→</span>
           </div>
           <div class="feature-card" onclick="location.hash='#list'">
-            <div class="feature-icon blush">INCI</div>
+            <div class="feature-icon blush icon-ingredient"><span></span><b></b><i></i></div>
             <div class="feature-title">成分安全分析</div>
             <p class="feature-desc">逐项解析成分表，标注风险成分并给出安全等级，敏感肌友好指引。</p>
             <span class="feature-arrow">→</span>
@@ -1155,29 +1207,47 @@ document.addEventListener('DOMContentLoaded', () => {
       app.innerHTML = '<div class="section"><p>未找到产品版本</p></div>';
       return;
     }
+    const product = products.find(p => p.id === pv.product_id) || {};
+    const productImage = product.image || getProductImage(pv.product_id);
     app.innerHTML = `
       <div class="section">
         <a href="#versions" class="back-link">← 返回版本对比</a>
-        <div class="section-label">✦ ${pv.product_name}</div>
-        <div class="section-title">版本选择</div>
-        ${pv.comparison ? `
-          <div class="compare-insight-card mt-2">
-            <div class="compare-insight-label">AI 决策定位</div>
-            <div class="compare-insight-text">${pv.comparison.positioning} · ${pv.comparison.best_for}</div>
-            <div class="compare-mini-tags">
-              ${(pv.comparison.claims || []).map(item => `<span>${item}</span>`).join('')}
-              ${(pv.comparison.risk_flags || []).slice(0, 2).map(item => `<span class="risk">${item}</span>`).join('')}
-            </div>
+        <div class="version-detail-hero">
+          <div class="version-detail-image">
+            <img src="${productImage}" alt="${pv.product_name}" onerror="this.src='${getProductImage(pv.product_id)}'">
           </div>
-        ` : ''}
-        <div class="esg-grid" style="margin-top:1.5rem;">
+          <div class="version-detail-copy">
+            <div class="section-label">✦ ${pv.brand} · ${pv.category}</div>
+            <div class="section-title">${pv.product_name}</div>
+            <p class="section-subtitle">共 ${pv.versions.length} 个版本，结合色卡、肤色建议和购买风险快速选择。</p>
+            ${pv.comparison ? `
+              <div class="version-detail-position">
+                <span>决策定位</span>
+                <strong>${pv.comparison.positioning}</strong>
+                <p>${pv.comparison.best_for}</p>
+              </div>
+              <div class="compare-mini-tags">
+                ${(pv.comparison.claims || []).map(item => `<span>${item}</span>`).join('')}
+                ${(pv.comparison.risk_flags || []).slice(0, 2).map(item => `<span class="risk">${item}</span>`).join('')}
+              </div>
+            ` : ''}
+          </div>
+        </div>
+
+        <div class="version-swatch-grid">
           ${pv.versions.map(v => `
-            <div class="esg-card">
-              <div class="label">${v.name}</div>
-              <div class="value">${v.color}</div>
-              <div style="font-size:0.85rem;color:var(--slate);margin-top:0.5rem;">
-                <div>适合肤质：${v.适合肤色}</div>
-                <div>特点：${v.特点}</div>
+            <div class="version-swatch-card">
+              <div class="version-swatch" style="--swatch:${swatchForVersion(v, pv.category)};">
+                <span></span>
+              </div>
+              <div class="version-swatch-info">
+                <div class="version-swatch-id">${v.version_id}</div>
+                <div class="version-swatch-name">${v.name}</div>
+                <div class="version-swatch-color">${v.color}</div>
+                <div class="version-swatch-meta">
+                  <span>${v.适合肤色}</span>
+                  <span>${v.特点}</span>
+                </div>
               </div>
             </div>
           `).join('')}
