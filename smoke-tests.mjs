@@ -71,8 +71,14 @@ assert.match(script, /swatchForVersion/, "version detail should map versions to 
 assert.match(script, /icon-price/, "home feature icons should use refined CSS icon markup");
 assert.doesNotMatch(script, /feature-icon[^<]*>[^<]*(¥|AI|ESG|INCI)/, "home icons should not render bare text labels");
 assert.match(script, /product-compare-btn/, "product cards should expose compare button");
-assert.match(script, /stopPropagation\(\); location\.hash='#versions\?compare=/, "compare button should navigate without opening product detail");
+assert.match(script, /event\.stopPropagation\(\); location\.hash='\$\{compareHref\}'/, "compare button should navigate without opening product detail");
 assert.match(css, /product-compare-btn/, "compare button should have dedicated styling");
+assert.match(script, /detail-action-row/, "product detail should expose a unified CTA row");
+assert.match(script, /查看色号 \/ 版本/, "product detail should link to internal versions when available");
+assert.match(script, /hasProductVersions/, "version CTA should only render when version data exists");
+assert.match(script, /btn-compare/, "comparison CTAs should use a shared compare button style");
+assert.match(css, /btn-compare/, "shared compare button style should be defined");
+assert.match(css, /detail-action-row/, "product detail CTA row should be styled");
 assert.equal(vercel.rewrites?.[0]?.source, "/api/analyze", "Vercel should route API requests");
 assert.equal(vercel.rewrites?.[0]?.destination, "/api/analyze.js", "Vercel should route to serverless function");
 assert.equal(packageJson.scripts.dev, "node local-server.js", "package should expose dev script for API demo");

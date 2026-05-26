@@ -138,6 +138,14 @@ document.addEventListener('DOMContentLoaded', () => {
     return Math.min(p.price_taobao, p.price_jd, p.price_douyin);
   }
 
+  function hasProductVersions(productId) {
+    return productVersions.some(pv => pv.product_id === productId);
+  }
+
+  function comparableCategoryCount(category) {
+    return productVersions.filter(pv => pv.category === category).length;
+  }
+
   /* ─── Load products.json ─── */
   async function loadProducts() {
     try {
@@ -559,6 +567,10 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ─── Product card helper ─── */
   function productCard(p) {
     const mp = minPrice(p);
+    const hasVersions = hasProductVersions(p.id);
+    const hasComparableCategory = comparableCategoryCount(p.category) >= 2;
+    const compareHref = hasComparableCategory ? `#versions?compare=${encodeURIComponent(p.category)}` : `#versions?id=${p.id}`;
+    const compareLabel = hasComparableCategory ? '对比同类' : '查看版本';
     return `
       <div class="product-card" onclick="location.hash='#detail?id=${p.id}'">
         <div class="product-img-wrap">
@@ -577,9 +589,11 @@ document.addEventListener('DOMContentLoaded', () => {
             <span class="rating-num">${p.avg_rating}</span>
           </div>
           <div class="product-comment-preview">${p.comment_summary || ''}</div>
-          <button class="product-compare-btn" type="button" onclick="event.stopPropagation(); location.hash='#versions?compare=${encodeURIComponent(p.category)}'">
-            <span></span>对比同类
-          </button>
+          ${hasComparableCategory || hasVersions ? `
+            <button class="product-compare-btn btn-compare" type="button" onclick="event.stopPropagation(); location.hash='${compareHref}'">
+              <span></span>${compareLabel}
+            </button>
+          ` : ''}
         </div>
       </div>
     `;
@@ -605,6 +619,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const esgScore = p.esg?.score || 0;
     const esgPct = `${esgScore * 3.6}deg`;
     const hasRisk = p.risk_ingredients && p.risk_ingredients[0] !== '无';
+    const hasVersions = hasProductVersions(p.id);
+    const hasComparableCategory = comparableCategoryCount(p.category) >= 2;
 
     app.innerHTML = `
       <div class="section">
@@ -625,6 +641,21 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="detail-quick-tags mt-2">
               ${(p.comment_positive||[]).map(t=>`<span class="quick-tag highlight">✓ ${t}</span>`).join('')}
               ${(p.comment_negative||[]).map(t=>`<span class="quick-tag">✗ ${t}</span>`).join('')}
+            </div>
+            <div class="detail-action-row">
+              <button class="btn btn-ai btn-detail-action" type="button" onclick="showProductAI(${p.id})">
+                <span class="btn-icon btn-icon-ai"></span>生成智能建议
+              </button>
+              ${hasVersions ? `
+                <a class="btn btn-secondary btn-detail-action" href="#versions?id=${p.id}">
+                  <span class="btn-icon btn-icon-swatch"></span>查看色号 / 版本
+                </a>
+              ` : ''}
+              ${hasComparableCategory ? `
+                <a class="btn btn-compare btn-detail-action" href="#versions?compare=${encodeURIComponent(p.category)}">
+                  <span class="btn-icon btn-icon-compare"></span>同类对比
+                </a>
+              ` : ''}
             </div>
             ${p.esg?.score >= 80 ? `
               <div style="margin-top:1rem;display:flex;align-items:center;gap:0.5rem;font-size:0.82rem;color:var(--mint-dark);">
@@ -1256,7 +1287,9 @@ document.addEventListener('DOMContentLoaded', () => {
           `).join('')}
         </div>
         <div style="margin-top:2rem;text-align:center;">
-          <a href="#versions?compare=${encodeURIComponent(pv.category)}" class="btn btn-primary">跨品牌对比 →</a>
+          <a href="#versions?compare=${encodeURIComponent(pv.category)}" class="btn btn-compare version-compare-cta">
+            <span class="btn-icon btn-icon-compare"></span>跨品牌对比
+          </a>
         </div>
       </div>
     `;
