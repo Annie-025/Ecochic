@@ -1,0 +1,284 @@
+[
+  {
+    "id": 1,
+    "name": "DW持妆粉底液",
+    "brand": "雅诗兰黛",
+    "category": "粉底液",
+    "image": "/pics/1.jpeg",
+    "variants": [
+      {"name": "17#象牙色", "shade": "黄一白", "suitable": "适合肤色偏白"},
+      {"name": "36#深色", "shade": "黄二白", "suitable": "适合自然肤色"},
+      {"name": "62#自然色", "shade": "黄一白/黄二白", "suitable": "适合大多数肤色"}
+    ],
+    "price_taobao": 420,
+    "price_jd": 435,
+    "price_douyin": 399,
+    "coupon_info": "满400减30",
+    "avg_rating": 4.8,
+    "comment_summary": "好评集中在遮瑕、持妆和控油表现，适合油皮与通勤长时间带妆；差评主要来自质地偏干、妆感偏厚、色号选择门槛高。",
+    "comment_positive": ["遮瑕效果好", "持妆久", "控油不错"],
+    "comment_negative": ["偏干", "妆感厚重", "色号难选"],
+    "ingredients": ["水", "环五聚二甲基硅氧烷", "二氧化钛", "云母", "氧化铁类"],
+    "risk_ingredients": ["无"],
+    "esg": {
+      "score": 85,
+      "gender": "女性高管比例较高，母公司公开披露多元与包容目标。",
+      "animal": "公开承诺减少动物实验，部分市场受法规影响仍需关注销售地区。",
+      "environment": "推进可回收包装和减碳计划，公开披露长期碳中和目标。",
+      "labor": "供应链审计机制较成熟，重点原料采购透明度较高。"
+    }
+  },
+  {
+    "id": 2,
+    "name": "菁纯唇膏",
+    "brand": "兰蔻",
+    "category": "口红",
+    "image": "/pics/2.png",
+    "variants": [
+      {"name": "196#朱砂红", "shade": "正红色", "suitable": "适合所有肤色"},
+      {"name": "274#法式玫瑰", "shade": "粉玫瑰", "suitable": "适合白皮"}
+    ],
+    "price_taobao": 320,
+    "price_jd": 335,
+    "price_douyin": 298,
+    "coupon_info": "满299减20",
+    "avg_rating": 4.7,
+    "comment_summary": "用户喜欢它的滋润度、显色和包装质感，送礼属性强；主要槽点是沾杯、价格偏高、持久度不如哑光唇釉。",
+    "comment_positive": ["滋润", "颜色好看", "包装高级"],
+    "comment_negative": ["沾杯", "贵", "持久度一般"],
+    "ingredients": ["蜂蜡", "羊毛脂衍生物", "植物油脂", "着色剂", "香精"],
+    "risk_ingredients": ["羊毛脂衍生物（部分人可能过敏）", "香精"],
+    "esg": {
+      "score": 78,
+      "gender": "品牌持续投放女性公益与教育项目，集团层面有性别平等披露。",
+      "animal": "品牌声明遵守替代测试路线，但不同市场法规差异需单独核对。",
+      "environment": "部分包装采用可回收材质，替换芯体系仍有优化空间。",
+      "labor": "供应链合规披露较完整，原料可追溯信息偏集团口径。"
+    }
+  },
+  {
+    "id": 3,
+    "name": "神仙水精华液",
+    "brand": "SK-II",
+    "category": "精华",
+    "image": "pics/3.jpg",
+    "variants": [
+      {"name": "经典版 230ml", "size": "230ml", "suitable": "适合大多数肤质"},
+      {"name": "新版 165ml", "size": "165ml", "suitable": "便携出差"}
+    ],
+    "price_taobao": 1590,
+    "price_jd": 1650,
+    "price_douyin": 1499,
+    "coupon_info": "满1500减100",
+    "avg_rating": 4.9,
+    "comment_summary": "高分评价来自肤质细腻、提亮和油水平衡改善；负面反馈集中在价格高、发酵气味明显、敏感肌初期可能不适。",
+    "comment_positive": ["提亮肤色", "改善肤质", "控油平衡"],
+    "comment_negative": ["贵", "发酵味明显", "敏感肌慎用"],
+    "ingredients": ["半乳糖酵母样菌发酵产物滤液", "丁二醇", "戊二醇", "苯甲酸钠"],
+    "risk_ingredients": ["发酵产物（屏障受损时需试用）"],
+    "esg": {
+      "score": 70,
+      "gender": "母公司有多元化目标披露，品牌单独维度信息有限。",
+      "animal": "部分销售市场仍可能受到动物测试法规影响。",
+      "environment": "玻璃瓶可回收，但高端包装整体材料消耗较高。",
+      "labor": "集团供应链审计通过，公开细节相对有限。"
+    }
+  },
+  {
+    "id": 4,
+    "name": "同心锁口红",
+    "brand": "花西子",
+    "category": "口红",
+    "image": "/pics/4.jpeg",
+    "variants": [
+      {"name": "M501朱砂红", "color": "朱砂红", "suitable": "适合复古妆容"},
+      {"name": "M502绛纱红", "color": "豆沙红", "suitable": "适合日常通勤"}
+    ],
+    "price_taobao": 219,
+    "price_jd": 229,
+    "price_douyin": 199,
+    "coupon_info": "满199减10",
+    "avg_rating": 4.6,
+    "comment_summary": "正向反馈集中在国风包装、雕花工艺和顺滑质地；负面反馈多为掉色、显唇纹和包装溢价感。",
+    "comment_positive": ["包装精美", "雕花精致", "膏体顺滑"],
+    "comment_negative": ["易掉色", "显唇纹", "包装溢价"],
+    "ingredients": ["蜂蜡", "合成蜡", "植物油", "云母", "着色剂"],
+    "risk_ingredients": ["蜂蜡（非纯素）"],
+    "esg": {
+      "score": 82,
+      "gender": "女性消费洞察和女性员工占比较高，公开治理数据仍可增强。",
+      "animal": "品牌口径强调不主动进行动物实验，纯素信息需按单品核对。",
+      "environment": "部分礼盒包装较重，已尝试替换装和减塑设计。",
+      "labor": "本土供应链响应快，公开审计与原料追溯信息有提升空间。"
+    }
+  },
+  {
+    "id": 5,
+    "name": "双抗精华",
+    "brand": "珀莱雅",
+    "category": "精华",
+    "image": "/pics/5.png",
+    "variants": [
+      {"name": "30ml 标准装", "size": "30ml", "suitable": "适合早八人"},
+      {"name": "50ml 大容量", "size": "50ml", "suitable": "适合家用"}
+    ],
+    "price_taobao": 239,
+    "price_jd": 249,
+    "price_douyin": 219,
+    "coupon_info": "满200减20",
+    "avg_rating": 4.8,
+    "comment_summary": "用户认可抗氧化、去黄提亮和性价比，是预算友好的功效精华；差评集中在质地略粘、烟酰胺不耐受和搓泥搭配问题。",
+    "comment_positive": ["去黄提亮", "抗氧化", "性价比高"],
+    "comment_negative": ["质地粘", "部分人不耐受", "搭配防晒可能搓泥"],
+    "ingredients": ["麦角硫因", "虾青素", "烟酰胺", "肌肽", "生育酚"],
+    "risk_ingredients": ["烟酰胺（不耐受可能泛红）"],
+    "esg": {
+      "score": 88,
+      "gender": "女性消费者沟通友好，组织多元议题参与度较高。",
+      "animal": "品牌公开表示不进行动物实验，单品动物源成分较少。",
+      "environment": "推进可替换包装、减塑和国货供应链本地化。",
+      "labor": "供应链审计和质量追溯较完整，适合展示国产品牌透明化。"
+    }
+  },
+  {
+    "id": 6,
+    "name": "柔雾唇釉",
+    "brand": "NARS",
+    "category": "唇釉",
+    "image": "/pics/6.jpeg",
+    "variants": [
+      {"name": "柔雾红缪斯", "color": "正红色", "finish": "柔雾", "suitable": "适合所有肤色"},
+      {"name": "柔雾玫瑰", "color": "玫瑰粉", "finish": "柔雾", "suitable": "适合白皮"},
+      {"name": "柔雾焦糖", "color": "焦糖色", "finish": "柔雾", "suitable": "适合欧美妆"}
+    ],
+    "price_taobao": 280,
+    "price_jd": 290,
+    "price_douyin": 269,
+    "coupon_info": "满269减10",
+    "avg_rating": 4.7,
+    "comment_summary": "好评集中在高级哑光、颜色饱和和薄涂不厚重；差评主要是沾杯、卸妆成本高和唇部状态不好时显纹。",
+    "comment_positive": ["丝绒质地", "不拔干", "颜色饱和"],
+    "comment_negative": ["沾杯", "难卸", "状态差时显唇纹"],
+    "ingredients": ["聚二甲基硅氧烷", "云母", "二氧化硅", "着色剂", "成膜剂"],
+    "risk_ingredients": ["着色剂（唇部敏感者需试色）"],
+    "esg": {
+      "score": 72,
+      "gender": "品牌视觉表达多元，集团层面有包容性承诺。",
+      "animal": "动物测试政策存在市场差异，需按地区核查。",
+      "environment": "包装可回收信息有限，彩妆塑料件占比较高。",
+      "labor": "供应链管理依托集团体系，公开到单品层级的信息有限。"
+    }
+  },
+  {
+    "id": 7,
+    "name": "紫熨斗眼霜",
+    "brand": "欧莱雅",
+    "category": "眼霜",
+    "image": "/pics/7.jpg",
+    "variants": [
+      {"name": "30ml", "size": "30ml", "suitable": "适合初抗老"},
+      {"name": "15ml*2", "size": "30ml", "suitable": "性价比之选"}
+    ],
+    "price_taobao": 279,
+    "price_jd": 289,
+    "price_douyin": 259,
+    "coupon_info": "满259减15",
+    "avg_rating": 4.7,
+    "comment_summary": "用户认可淡纹、保湿和大容量性价比；差评集中在搓泥、辣眼睛和对深层纹路改善有限。",
+    "comment_positive": ["淡化细纹", "保湿不油", "性价比高"],
+    "comment_negative": ["搓泥", "辣眼睛", "深纹改善有限"],
+    "ingredients": ["玻色因", "透明质酸钠", "咖啡因", "甘油", "乙醇"],
+    "risk_ingredients": ["乙醇（眼周敏感者需谨慎）"],
+    "esg": {
+      "score": 75,
+      "gender": "集团有女性赋权项目和多元人才目标。",
+      "animal": "推动替代测试，但部分市场仍受法规约束。",
+      "environment": "集团减碳路线清晰，单品包装减量信息一般。",
+      "labor": "全球供应链审计体系较完整，公开报告可查。"
+    }
+  },
+  {
+    "id": 8,
+    "name": "九宫格眼影盘",
+    "brand": "3CE",
+    "category": "眼影",
+    "image": "/pics/8.jpeg",
+    "variants": [
+      {"name": "JOJO橘金", "palette": "橘棕", "suitable": "适合暖皮"},
+      {"name": "SMOOTHIE干玫瑰", "palette": "粉棕", "suitable": "适合冷皮"}
+    ],
+    "price_taobao": 230,
+    "price_jd": 239,
+    "price_douyin": 199,
+    "coupon_info": "满199减10",
+    "avg_rating": 4.8,
+    "comment_summary": "好评集中在配色日常、粉质细腻和新手友好；差评主要是飞粉、持久度一般和亮片色利用率低。",
+    "comment_positive": ["粉质细腻", "颜色百搭", "显色适中"],
+    "comment_negative": ["飞粉", "持久一般", "亮片色利用率低"],
+    "ingredients": ["云母", "滑石粉", "二氧化钛", "氧化铁类", "合成氟金云母"],
+    "risk_ingredients": ["滑石粉（粉尘吸入需避免）"],
+    "esg": {
+      "score": 68,
+      "gender": "品牌面向年轻女性表达清晰，但治理维度披露有限。",
+      "animal": "动物测试和纯素信息需按市场与批次核对。",
+      "environment": "包装减量和可回收信息不足。",
+      "labor": "供应链公开资料有限，适合作为信息透明度对比案例。"
+    }
+  },
+  {
+    "id": 9,
+    "name": "小金瓶防晒",
+    "brand": "安热沙",
+    "category": "防晒",
+    "image": "/pics/9.jpg",
+    "variants": [
+      {"name": "经典款", "spf": "SPF50+", "suitable": "适合户外"},
+      {"name": "粉金瓶", "spf": "SPF50+", "suitable": "适合敏感肌"}
+    ],
+    "price_taobao": 248,
+    "price_jd": 258,
+    "price_douyin": 228,
+    "coupon_info": "满228减10",
+    "avg_rating": 4.7,
+    "comment_summary": "户外防护、防水防汗和成膜速度是核心好评；差评集中在酒精味、拔干、卸除成本和部分防晒剂环境争议。",
+    "comment_positive": ["防晒强", "防水防汗", "户外适用"],
+    "comment_negative": ["酒精味", "拔干", "难卸"],
+    "ingredients": ["氧化锌", "甲氧基肉桂酸乙基己酯", "乙醇", "二氧化钛", "硅石"],
+    "risk_ingredients": ["乙醇", "部分化学防晒剂环境争议"],
+    "esg": {
+      "score": 65,
+      "gender": "品牌 ESG 叙事以集团报告为主，单品社会维度信息有限。",
+      "animal": "部分原料与测试政策需按销售市场核查。",
+      "environment": "防晒剂对海洋环境影响存在讨论，包装回收信息一般。",
+      "labor": "供应链审计依托集团体系，公开细节有限。"
+    }
+  },
+  {
+    "id": 10,
+    "name": "动物眼影盘",
+    "brand": "完美日记",
+    "category": "眼影",
+    "image": "/pics/10.jpeg",
+    "variants": [
+      {"name": "小狗盘", "theme": "柯基", "suitable": "适合可爱风"},
+      {"name": "小猫盘", "theme": "英短", "suitable": "适合日常"}
+    ],
+    "price_taobao": 129,
+    "price_jd": 139,
+    "price_douyin": 119,
+    "coupon_info": "满119减5",
+    "avg_rating": 4.6,
+    "comment_summary": "好评来自配色丰富、显色和价格亲民，适合入门尝试；差评集中在飞粉、持久度不足和外壳质感一般。",
+    "comment_positive": ["配色丰富", "显色度高", "便宜"],
+    "comment_negative": ["飞粉严重", "持久差", "包装质感一般"],
+    "ingredients": ["云母", "滑石粉", "着色剂", "矿油", "合成氟金云母"],
+    "risk_ingredients": ["滑石粉（粉尘吸入需避免）", "矿油（痘肌谨慎）"],
+    "esg": {
+      "score": 70,
+      "gender": "年轻女性用户沟通强，治理披露和公益延展仍可加强。",
+      "animal": "动物主题包装有公益传播潜力，纯素和动物测试信息需明确。",
+      "environment": "塑料包装较多，替换装和回收设计不足。",
+      "labor": "本土供应链效率高，但公开审计信息有限。"
+    }
+  }
+]

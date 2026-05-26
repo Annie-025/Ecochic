@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoChic — AI 驱动的美妆决策助手</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <a href="#home" class="logo" style="text-decoration:none;">
+      <span class="logo-eco">Eco</span><span class="logo-chic">Chic</span>
+      <span class="logo-sub">AI 美妆决策</span>
+    </a>
+    <ul class="header-nav">
+      <li><a href="#home" id="nav-home">首页</a></li>
+      <li><a href="#list" id="nav-list">产品库</a></li>
+      <li><a href="#versions" id="nav-versions">版本对比</a></li>
+      <li><a href="#test" id="nav-test">价值观测试</a></li>
+      <li><a href="#profile" id="nav-profile">个人中心</a></li>
+    </ul>
+    <div class="header-search">
+      <input id="product-search" type="search" placeholder="搜索产品 / 品牌 / 成分">
+    </div>
+    <div class="header-ai-badge">
+      <span class="ai-dot-live"></span>
+      AI 分析引擎 · 运行中
+    </div>
+    <button class="mobile-menu-toggle" type="button" aria-label="打开导航" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <main id="app"></main>
+
+  <footer class="footer">
+    <p>© 2026 <strong>EcoChic</strong> · 让每一次美妆消费都有依据、有温度、有价值观</p>
+  </footer>
+
+  <div id="ai-modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h3 id="modal-title"></h3>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="./ai-client.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

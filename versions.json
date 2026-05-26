@@ -1,0 +1,210 @@
+[
+  {
+    "product_id": 1,
+    "product_name": "雅诗兰黛DW持妆粉底液",
+    "brand": "雅诗兰黛",
+    "category": "粉底液",
+    "versions": [
+      {
+        "version_id": "1C",
+        "name": "#1C Cool Ivory",
+        "color": "冷调象牙白",
+        "适合肤色": "冷白皮",
+        "特点": "偏粉调，最白色号",
+        "price_diff": 0
+      },
+      {
+        "version_id": "1W1",
+        "name": "#1W1 Bone",
+        "color": "暖调自然白",
+        "适合肤色": "暖白皮",
+        "特点": "亚洲最白色号",
+        "price_diff": 0
+      },
+      {
+        "version_id": "1W2",
+        "name": "#1W2 Sand",
+        "color": "暖调自然色",
+        "适合肤色": "自然肤色",
+        "特点": "遮瑕力最强",
+        "price_diff": 0
+      },
+      {
+        "version_id": "2C2",
+        "name": "#2C2 Ecru",
+        "color": "自然偏粉",
+        "适合肤色": "黄一白",
+        "特点": "偏粉调",
+        "price_diff": 0
+      },
+      {
+        "version_id": "3W2",
+        "name": "#3W2 Cashew",
+        "color": "暖调小麦色",
+        "适合肤色": "黄二白",
+        "特点": "遮瑕好，稍暗",
+        "price_diff": 0
+      }
+    ]
+  },
+  {
+    "product_id": 2,
+    "product_name": "兰蔻菁纯唇膏",
+    "brand": "兰蔻",
+    "category": "口红",
+    "versions": [
+      {
+        "version_id": "196",
+        "name": "#196 枫叶红",
+        "color": "复古枫叶红",
+        "适合肤色": "所有肤色",
+        "特点": "经典热门色，显白",
+        "price_diff": 0
+      },
+      {
+        "version_id": "277",
+        "name": "#277 玫瑰茶",
+        "color": "玫瑰茶色",
+        "适合肤色": "白皮/黄一白",
+        "特点": "日常百搭",
+        "price_diff": 0
+      },
+      {
+        "version_id": "888",
+        "name": "#888 落日橘",
+        "color": "元气橘色",
+        "适合肤色": "所有肤色",
+        "特点": "元气活泼",
+        "price_diff": 0
+      },
+      {
+        "version_id": "507",
+        "name": "#507 玫瑰豆沙",
+        "color": "玫瑰豆沙",
+        "适合肤色": "所有肤色",
+        "特点": "温柔日常",
+        "price_diff": 0
+      }
+    ]
+  },
+  {
+    "product_id": 6,
+    "product_name": "NARS超绒感柔雾唇釉",
+    "brand": "NARS",
+    "category": "唇釉",
+    "versions": [
+      {
+        "version_id": "mild",
+        "name": "温柔色",
+        "color": "裸粉玫瑰",
+        "适合肤色": "白皮/日常",
+        "特点": "温柔日常",
+        "price_diff": 0
+      },
+      {
+        "version_id": "aroused",
+        "name": "刺激色",
+        "color": "树莓红",
+        "适合肤色": "所有肤色",
+        "特点": "显白高级",
+        "price_diff": 0
+      },
+      {
+        "version_id": "deep",
+        "name": "深刻色",
+        "color": "酒红玫瑰",
+        "适合肤色": "所有肤色",
+        "特点": "复古优雅",
+        "price_diff": 0
+      },
+      {
+        "version_id": "forbidden",
+        "name": "禁忌色",
+        "color": "浆果红",
+        "适合肤色": "所有肤色",
+        "特点": "气场全开",
+        "price_diff": 0
+      }
+    ]
+  },
+  {
+    "product_id": 8,
+    "product_name": "3CE九宫格眼影盘",
+    "brand": "3CE",
+    "category": "眼影",
+    "versions": [
+      {
+        "version_id": "overtake",
+        "name": "overtake 落日橘",
+        "color": "暖橘色调",
+        "适合肤色": "所有肤色",
+        "特点": "最热门，百搭",
+        "price_diff": 0
+      },
+      {
+        "version_id": "speak",
+        "name": "speak 烟熏粉",
+        "color": "烟熏玫瑰",
+        "适合肤色": "白皮/黄一白",
+        "特点": "温柔日常",
+        "price_diff": 0
+      },
+      {
+        "version_id": "anyhow",
+        "name": "anyhow 水泥灰",
+        "color": "中性灰调",
+        "适合肤色": "所有肤色",
+        "特点": "欧美风，个性",
+        "price_diff": 0
+      },
+      {
+        "version_id": "gloro",
+        "name": "gloro 金香槟",
+        "color": "金棕色",
+        "适合肤色": "所有肤色",
+        "特点": "闪片好看",
+        "price_diff": 20
+      }
+    ]
+  },
+  {
+    "product_id": 10,
+    "product_name": "完美日记动物眼影盘",
+    "brand": "完美日记",
+    "category": "眼影",
+    "versions": [
+      {
+        "version_id": "wx01",
+        "name": "探险家01 斑驳",
+        "color": "大地色系",
+        "适合肤色": "所有肤色",
+        "特点": "新手友好",
+        "price_diff": 0
+      },
+      {
+        "version_id": "wx02",
+        "name": "探险家02 熵粉",
+        "color": "粉棕色调",
+        "适合肤色": "白皮/黄一白",
+        "特点": "粉色系",
+        "price_diff": 0
+      },
+      {
+        "version_id": "wx03",
+        "name": "探险家03 冰闪",
+        "color": "蓝色偏光",
+        "适合肤色": "所有肤色",
+        "特点": "偏光独特",
+        "price_diff": 0
+      },
+      {
+        "version_id": "wx04",
+        "name": "探险家04 红棕",
+        "color": "红棕色系",
+        "适合肤色": "所有肤色",
+        "特点": "秋冬必备",
+        "price_diff": 0
+      }
+    ]
+  }
+]
