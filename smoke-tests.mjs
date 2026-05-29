@@ -40,6 +40,13 @@ assert.equal(
 );
 
 assert.match(index, /mobile-menu-toggle/, "mobile navigation toggle must exist");
+assert.match(script, /profile-avatar-icon/, "profile avatar should render a neutral portrait silhouette");
+assert.doesNotMatch(script, /<div class="profile-avatar">💄<\/div>/, "profile avatar should not use the makeup emoji");
+assert.match(script, /version-detail-grid/, "version detail page should use responsive version cards");
+assert.match(script, /compare-table-wrap/, "version guide table should have a mobile scroll wrapper");
+assert.match(script, /version-chip-list/, "cross-brand comparison should use responsive chips");
+assert.match(script, /section-actions/, "primary page actions should use shared responsive button layout");
+assert.match(index + script, /product-card/, "product cards must remain rendered by the app");
 assert.match(index, /ai-client\.js/, "AI client module must be loaded before app script");
 assert.match(api, /DEEPSEEK_API_KEY/, "AI backend should support DeepSeek");
 assert.match(api, /QWEN_API_KEY/, "AI backend should support Qwen");

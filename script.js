@@ -309,7 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="products-grid mt-3">
           ${topProducts.map(p => productCard(p)).join('')}
         </div>
-        <div style="text-align:center;margin-top:2rem;">
+        <div class="section-actions">
           <a href="#list" class="btn btn-secondary">查看全部 ${products.length} 款产品 →</a>
         </div>
       </div>
@@ -735,10 +735,10 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           ` : ''}
 
-          <div style="display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap;">
-            <a href="#list" class="btn btn-primary">查看为我推荐的产品 →</a>
-            <button class="btn btn-secondary" onclick="resetTest()">重新测试</button>
-          </div>
+        <div class="section-actions section-actions-left">
+          <a href="#list" class="btn btn-primary">查看为我推荐的产品 →</a>
+          <button class="btn btn-secondary" onclick="resetTest()">重新测试</button>
+        </div>
         </div>
 
         <div class="section-label mt-3">✦ 基于价值观推荐</div>
@@ -783,7 +783,12 @@ document.addEventListener('DOMContentLoaded', () => {
           <!-- Left sidebar -->
           <div>
             <div class="profile-card mb-2">
-              <div class="profile-avatar">💄</div>
+              <div class="profile-avatar" aria-label="用户头像">
+                <svg class="profile-avatar-icon" viewBox="0 0 64 64" role="img" aria-hidden="true" focusable="false">
+                  <circle cx="32" cy="23" r="12"></circle>
+                  <path d="M13 56c2.6-12.4 10-20 19-20s16.4 7.6 19 20"></path>
+                </svg>
+              </div>
               <div class="profile-name">EcoChic 用户</div>
               <div class="profile-tag">${values ? '已完成价值观测试' : '未完成价值观测试'}</div>
 
@@ -1055,7 +1060,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </a>
           `).join('')}
         </div>
-        <div style="margin-top:2rem;text-align:center;">
+        <div class="section-actions">
           <a href="#versions-guide" class="btn btn-secondary">版本选择指南 →</a>
         </div>
       </div>
@@ -1073,19 +1078,19 @@ document.addEventListener('DOMContentLoaded', () => {
         <a href="#versions" class="back-link">← 返回版本对比</a>
         <div class="section-label">✦ ${pv.product_name}</div>
         <div class="section-title">版本选择</div>
-        <div class="esg-grid" style="margin-top:1.5rem;">
+        <div class="version-detail-grid">
           ${pv.versions.map(v => `
-            <div class="esg-card">
-              <div class="label">${v.name}</div>
-              <div class="value">${v.color}</div>
-              <div style="font-size:0.85rem;color:var(--slate);margin-top:0.5rem;">
+            <div class="version-option-card">
+              <div class="version-option-label">${v.name}</div>
+              <div class="version-option-value">${v.color}</div>
+              <div class="version-option-meta">
                 <div>适合肤质：${v.适合肤色}</div>
                 <div>特点：${v.特点}</div>
               </div>
             </div>
           `).join('')}
         </div>
-        <div style="margin-top:2rem;text-align:center;">
+        <div class="section-actions">
           <a href="#versions?compare=${encodeURIComponent(pv.category)}" class="btn btn-primary">跨品牌对比 →</a>
         </div>
       </div>
@@ -1098,18 +1103,20 @@ document.addEventListener('DOMContentLoaded', () => {
         <a href="#versions" class="back-link">← 返回版本对比</a>
         <div class="section-label">✦ 版本选择指南</div>
         <div class="section-title">根据肤质选择</div>
-        <table class="compare-table" style="margin-top:1.5rem;">
-          <thead>
-            <tr><th>肤质</th><th>推荐色号</th><th>注意事项</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>冷白皮</td><td>1C、N196</td><td>选择偏粉调</td></tr>
-            <tr><td>暖白皮</td><td>1W1、277</td><td>选择偏黄调</td></tr>
-            <tr><td>黄一白</td><td>1W2、507</td><td>百搭色系</td></tr>
-            <tr><td>黄二白</td><td>3W2、888</td><td>避免粉色</td></tr>
-            <tr><td>小麦色</td><td>深色系</td><td>选择饱和色</td></tr>
-          </tbody>
-        </table>
+        <div class="compare-table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr><th>肤质</th><th>推荐色号</th><th>注意事项</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>冷白皮</td><td>1C、N196</td><td>选择偏粉调</td></tr>
+              <tr><td>暖白皮</td><td>1W1、277</td><td>选择偏黄调</td></tr>
+              <tr><td>黄一白</td><td>1W2、507</td><td>百搭色系</td></tr>
+              <tr><td>黄二白</td><td>3W2、888</td><td>避免粉色</td></tr>
+              <tr><td>小麦色</td><td>深色系</td><td>选择饱和色</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     `;
   }
@@ -1122,11 +1129,11 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="section-label">✦ 跨品牌对比</div>
         <div class="section-title">${category} 版本对比</div>
         ${categoryProducts.map(pv => `
-          <div style="margin-top:1.5rem;padding:1rem;background:var(--white);border-radius:12px;">
-            <div style="font-weight:600;margin-bottom:0.5rem;">${pv.product_name}</div>
-            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+          <div class="version-compare-card">
+            <div class="version-compare-title">${pv.product_name}</div>
+            <div class="version-chip-list">
               ${pv.versions.map(v => `
-                <span style="padding:0.3rem 0.8rem;background:var(--ivory);border-radius:20px;font-size:0.85rem;">
+                <span class="version-chip">
                   ${v.name} · ${v.适合肤色}
                 </span>
               `).join('')}
