@@ -26,24 +26,6 @@ npm start
 
 打开 `http://localhost:4173`。不要把 `.env` 或 API key 提交到前端代码。
 
-## 移动端部署演示
-
-GitHub Pages 链接适合手机现场展示静态版本：
-
-```text
-https://annie-025.github.io/Ecochic/
-```
-
-手机演示推荐路径：
-
-```text
-#list → 搜索「防晒」或「烟酰胺」
-#versions?compare=粉底液
-#versions?compare=防晒
-#detail?id=13
-```
-
-如果需要手机端演示真实 API，请部署到 Vercel 或 Netlify 这类支持 serverless 函数的平台。GitHub Pages 只能托管静态文件，不能安全保存 API key，因此线上 Pages 会自动 mock。
 
 ### Vercel 真实 API 部署
 
