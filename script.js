@@ -138,6 +138,14 @@ document.addEventListener('DOMContentLoaded', () => {
     return Math.min(p.price_taobao, p.price_jd, p.price_douyin);
   }
 
+  function hasProductVersions(productId) {
+    return productVersions.some(pv => pv.product_id === productId);
+  }
+
+  function comparableCategoryCount(category) {
+    return productVersions.filter(pv => pv.category === category).length;
+  }
+
   /* ─── Load products.json ─── */
   async function loadProducts() {
     try {
@@ -559,6 +567,11 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ─── Product card helper ─── */
   function productCard(p) {
     const mp = minPrice(p);
+    const hasVersions = hasProductVersions(p.id);
+    const hasComparableCategory = comparableCategoryCount(p.category) >= 2;
+    const compareHref = hasComparableCategory ? `#versions?compare=${encodeURIComponent(p.category)}` : `#versions?id=${p.id}`;
+    const compareLabel = hasComparableCategory ? '对比同类' : '查看版本';
+    
     return `
       <div class="product-card" onclick="location.hash='#detail?id=${p.id}'">
         <div class="product-img-wrap">
@@ -577,6 +590,11 @@ document.addEventListener('DOMContentLoaded', () => {
             <span class="rating-num">${p.avg_rating}</span>
           </div>
           <div class="product-comment-preview">${p.comment_summary || ''}</div>
+          ${hasVersions || hasComparableCategory ? `
+            <button class="product-compare-btn" type="button" onclick="event.stopPropagation(); location.hash='${compareHref}'">
+              <span></span>${compareLabel}
+            </button>
+          ` : ''}
         </div>
       </div>
     `;
@@ -903,7 +921,12 @@ document.addEventListener('DOMContentLoaded', () => {
           <!-- Left sidebar -->
           <div>
             <div class="profile-card mb-2">
-              <div class="profile-avatar">💄</div>
+              <div class="profile-avatar">
+                <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="21" cy="14" r="10" stroke="#888888" stroke-width="2"/>
+                  <path d="M6 38c0-8.284 6.716-15 15-15s15 6.716 15 15" stroke="#888888" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
               <div class="profile-name">EcoChic 用户</div>
               <div class="profile-tag">${values ? '已完成价值观测试' : '未完成价值观测试'}</div>
 
@@ -948,7 +971,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="profile-card">
               <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;">
                 <div style="font-size:0.9rem;font-weight:600;color:var(--charcoal);">🧴 空瓶打卡</div>
-                <button onclick="addBottle()" style="padding:0.4rem 1rem;font-size:0.8rem;background:var(--mint-dark);">+ 模拟打卡</button>
+                <button onclick="addBottle()" class="btn btn-primary" style="font-size:0.85rem;padding:0.5rem 1.2rem;">+ 模拟打卡</button>
               </div>
               <p style="font-size:0.82rem;color:var(--slate);margin-bottom:1.25rem;line-height:1.6;">
                 空瓶打卡不仅记录您的使用感受，也为品牌提供真实的长期评价数据——这是 EcoChic B 端服务的核心价值。

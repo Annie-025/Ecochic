@@ -1137,6 +1137,44 @@ main { min-height: 100vh; }
   -webkit-box-orient: vertical; overflow: hidden;
 }
 
+.product-compare-btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  min-height: 34px; margin-top: 0.62rem;
+  padding: 0.42rem 1rem;
+  border: 1px solid rgba(97,154,129,0.28);
+  border-radius: var(--r-pill);
+  background: linear-gradient(135deg, rgba(184,228,208,0.42), rgba(255,255,255,0.9));
+  color: var(--mint-dark);
+  font-family: var(--font-body); font-size: 0.78rem; font-weight: 500;
+  cursor: pointer; white-space: nowrap;
+  transition: all 0.25s;
+}
+.product-compare-btn:hover {
+  border-color: var(--mint-dark);
+  background: linear-gradient(135deg, rgba(184,228,208,0.6), rgba(255,255,255,0.95));
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(61,155,128,0.15);
+}
+.product-compare-btn span {
+  width: 14px; height: 14px;
+  border: 1.8px solid var(--mint-dark);
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+}
+.product-compare-btn span::before,
+.product-compare-btn span::after {
+  content: '';
+  position: absolute; top: 50%; width: 6px; height: 2px;
+  background: var(--mint-dark); border-radius: 999px;
+}
+.product-compare-btn span::before {
+  left: -7px; transform: translateY(-50%);
+}
+.product-compare-btn span::after {
+  right: -7px; transform: translateY(-50%);
+}
+
 /* ─────────────────────────────────────────── SORT BAR ──── */
 .list-search-panel {
   display: flex;
@@ -1517,8 +1555,14 @@ main { min-height: 100vh; }
 }
 .profile-avatar {
   width: 72px; height: 72px; border-radius: 50%;
-  background: var(--grad-mint); display: flex; align-items: center; justify-content: center;
-  font-size: 1.8rem; margin-bottom: 1.25rem;
+  background: var(--ivory); display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.25rem;
+  border: 1.5px solid var(--border);
+  overflow: hidden;
+}
+.profile-avatar svg {
+  width: 42px;
+  height: 42px;
 }
 .profile-name { font-size: 1.15rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.25rem; }
 .profile-tag { font-size: 0.78rem; color: var(--slate); }
