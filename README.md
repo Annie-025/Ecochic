@@ -4,7 +4,6 @@ EcoChic 是一个 AI 驱动的美妆消费决策 demo，覆盖产品库、评论
 
 ## 运行方式
 
-静态预览（适合 GitHub Pages）：
 
 ```bash
 python3 -m http.server 8000
